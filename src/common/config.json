@@ -2,23 +2,17 @@
     "templates": [
         {
             "name": "vue3-webpack",
-            "url": [
-                "github:shien7654321/STWebCLI#tpl-vue3-webpack"
-            ],
+            "url": ["github:shien7654321/STWebCLI#tpl-vue3-webpack"],
             "description": "Vue 3 Project With Webpack"
         },
         {
             "name": "vue3-vite",
-            "url": [
-                "github:shien7654321/STWebCLI#tpl-vue3-vite"
-            ],
+            "url": ["github:shien7654321/STWebCLI#tpl-vue3-vite"],
             "description": "Vue 3 Project With Vite"
         },
         {
             "name": "vue2-webpack",
-            "url": [
-                "github:shien7654321/STWebCLI#tpl-vue2-webpack"
-            ],
+            "url": ["github:shien7654321/STWebCLI#tpl-vue2-webpack"],
             "description": "Vue 2 Project With Webpack"
         }
     ]

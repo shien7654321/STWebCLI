@@ -1,0 +1,25 @@
+{
+    "templates": [
+        {
+            "name": "vue3-webpack",
+            "url": [
+                "direct:https://github.com/shien7654321/STWebTemplate.git#vue3-webpack"
+            ],
+            "description": "Vue 3 Project With Webpack"
+        },
+        {
+            "name": "vue3-vite",
+            "url": [
+                "direct:https://github.com/shien7654321/STWebTemplate.git#vue3-vite"
+            ],
+            "description": "Vue 3 Project With Vite"
+        },
+        {
+            "name": "vue2-webpack",
+            "url": [
+                "direct:https://github.com/shien7654321/STWebTemplate.git#vue2-webpack"
+            ],
+            "description": "Vue 2 Project With Webpack"
+        }
+    ]
+}

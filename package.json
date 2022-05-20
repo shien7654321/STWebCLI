@@ -1,0 +1,67 @@
+{
+    "name": "st-web-cli-template",
+    "version": "1.0.0",
+    "main": "src/main.ts",
+    "license": "MIT",
+    "scripts": {
+        "build": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.prod.ts",
+        "start": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack serve --progress --config build/webpack.dev.ts",
+        "lint": "eslint --fix \"src/**/*.{vue,js,ts,jsx,tsx}\"",
+        "lint-style": "stylelint --fix \"src/**/*.{html,vue,css,less,sass,scss,styl,jsx,tsx}\"",
+        "prettier": "prettier --write \"src\""
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ],
+    "engines": {
+        "node": ">= 16.0.0",
+        "npm": ">= 6.0.0"
+    },
+    "dependencies": {
+        "vue": "^3.2.33"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.12",
+        "@babel/preset-env": "^7.17.12",
+        "@babel/register": "^7.17.7",
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "@vue/babel-plugin-jsx": "^1.1.1",
+        "@vue/compiler-sfc": "^3.2.33",
+        "autoprefixer": "^10.4.7",
+        "babel-loader": "^8.2.5",
+        "compression-webpack-plugin": "^10.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.1",
+        "css-minimizer-webpack-plugin": "^4.0.0",
+        "eslint": "^8.15.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-vue": "^9.0.1",
+        "html-webpack-plugin": "^5.5.0",
+        "less": "^4.1.2",
+        "less-loader": "^11.0.0",
+        "mini-css-extract-plugin": "^2.6.0",
+        "postcss-html": "^1.4.1",
+        "postcss-less": "^6.0.0",
+        "postcss-loader": "^7.0.0",
+        "prettier": "^2.6.2",
+        "process": "^0.11.10",
+        "style-loader": "^3.3.1",
+        "stylelint": "^14.8.2",
+        "stylelint-config-recommended-vue": "^1.4.0",
+        "stylelint-config-standard": "^25.0.0",
+        "terser-webpack-plugin": "^5.3.1",
+        "ts-loader": "^9.3.0",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.6.4",
+        "uglify-js": "^3.15.5",
+        "vue-loader": "^17.0.0",
+        "webpack": "^5.72.1",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.9.0",
+        "webpack-merge": "^5.8.0"
+    }
+}

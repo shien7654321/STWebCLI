@@ -27,7 +27,7 @@ async function init(projectName, options = {}, context = process.cwd()) {
             text: 'start config project...',
             color: 'blue',
         }).start();
-        const configFlag = await configPackageInfo(dir, name, packageInfo);
+        const configFlag = await configPackageInfo(dir, packageInfo);
         if (configFlag) {
             if (shelljs.which('yarn')) {
                 configSpinner.succeed('config project success');
@@ -37,6 +37,7 @@ async function init(projectName, options = {}, context = process.cwd()) {
                 }).start();
                 log('\n');
                 shelljs.exec(`cd ${projectName} && yarn && cd ..`);
+                log('\n');
                 installSpinner.succeed('create project success');
             } else {
                 configSpinner.succeed('create project success');
@@ -88,7 +89,7 @@ async function askTemplate() {
     });
 }
 
-async function configPackageInfo(dir, name, packageInfo) {
+async function configPackageInfo(dir, packageInfo) {
     return new Promise(resolve => {
         const filePath = dir + '/package.json';
         fs.readFile(filePath, 'utf8', (err, data) => {

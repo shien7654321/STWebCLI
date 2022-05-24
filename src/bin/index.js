@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander');
 
-program.version(require('../../package').version, '-v, --version');
+program.version(require('../../package.json').version, '-v, --version');
 
 program
     .command('init <project-name>')

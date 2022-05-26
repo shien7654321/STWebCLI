@@ -20,7 +20,7 @@ async function init(projectName, options = {}, context = process.cwd()) {
         text: 'start download template...',
         color: 'blue',
     }).start();
-    const { dir, name, flag } = await download(templateInfo.url, projectName, context);
+    const { dir, flag } = await download(templateInfo.url, projectName, context);
     if (flag) {
         downloadSpinner.succeed('download template success');
         const configSpinner = ora({

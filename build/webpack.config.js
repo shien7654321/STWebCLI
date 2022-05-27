@@ -29,6 +29,7 @@ module.exports = {
                         drop_console: false,
                     },
                 },
+                extractComments: false,
             }),
         ],
         moduleIds: 'deterministic',
@@ -77,6 +78,10 @@ module.exports = {
         new webpack.ContextReplacementPlugin(/keyv|update-notifier/, data => {
             delete data.dependencies[0].critical;
             return data;
+        }),
+        new webpack.BannerPlugin({
+            banner: '#!/usr/bin/env node',
+            raw: true,
         }),
     ],
 };

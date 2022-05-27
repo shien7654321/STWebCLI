@@ -1,13 +1,13 @@
 {
     "name": "st-web-cli",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A web project CLI.",
     "main": "dist/main.js",
     "files": [
         "dist/*"
     ],
     "scripts": {
-        "build": "webpack --progress --config build/webpack.config.js",
+        "build": "webpack --progress --config build/webpack.config.js && chmod +x dist/main.js",
         "prettier": "prettier --write \"**\""
     },
     "repository": {

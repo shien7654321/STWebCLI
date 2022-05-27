@@ -39,6 +39,7 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
                         drop_console: false,
                     },
                 },
+                extractComments: false,
             }),
         ],
     },

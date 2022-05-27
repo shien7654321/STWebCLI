@@ -1,11 +1,8 @@
 {
     "name": "st-web-cli",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "A web project CLI.",
     "main": "src/bin/index.js",
-    "files": [
-        "dist/*"
-    ],
     "scripts": {
         "prettier": "prettier --write \"**\""
     },

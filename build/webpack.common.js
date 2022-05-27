@@ -39,6 +39,7 @@ module.exports = {
                         drop_console: false,
                     },
                 },
+                extractComments: false,
             }),
         ],
     },

@@ -33,5 +33,6 @@ Suta, shien7654321@163.com
 
 ## License
 
-[MIT]: https://opensource.org/licenses/MIT
-[MIT license][MIT].
+[mit]: https://opensource.org/licenses/MIT
+
+[MIT license][mit].

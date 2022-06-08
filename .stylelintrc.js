@@ -8,5 +8,6 @@ module.exports = {
     ],
     rules: {
         indentation: 4,
+        'selector-class-pattern': null,
     },
 };

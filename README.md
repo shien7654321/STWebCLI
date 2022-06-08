@@ -4,7 +4,7 @@ Web CLI template in the specified branch.
 
 ## Vue 2 Project With Webpack
 
-``` bash
+```bash
 # install dependencies
 yarn
 
@@ -30,5 +30,6 @@ Suta, shien7654321@163.com
 
 ## License
 
-[MIT]: https://opensource.org/licenses/MIT
-[MIT license][MIT].
+[mit]: https://opensource.org/licenses/MIT
+
+[MIT license][mit].

@@ -70,7 +70,7 @@ module.exports = {
             },
             {
                 test: /\.(jsx?|babel|es6)$/,
-                exclude: (file) => file.includes('node_modules') && !file.includes('.vue.js'),
+                exclude: file => file.includes('node_modules') && !file.includes('.vue.js'),
                 use: [
                     {
                         loader: 'babel-loader',

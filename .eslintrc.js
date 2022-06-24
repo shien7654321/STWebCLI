@@ -11,5 +11,6 @@ module.exports = {
         'vue/no-v-model-argument': 'off',
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
+        'vue/no-multiple-template-root': 'off',
     },
 };

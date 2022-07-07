@@ -20,5 +20,6 @@ module.exports = {
                 mjs: 'never',
             },
         ],
+        'import/no-unresolved': 'off',
     },
 };

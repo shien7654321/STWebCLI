@@ -20,7 +20,7 @@ module.exports = {
     output: {
         path: resolve('dist'),
         clean: true,
-        filename: 'static/js/[name].[chunkhash:8].min.js',
+        filename: 'static/js/[name].[chunkhash:8].client.js',
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],

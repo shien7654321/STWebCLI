@@ -66,7 +66,7 @@ export default merge(commonConfig, {
                 ],
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,

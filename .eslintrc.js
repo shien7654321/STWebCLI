@@ -21,5 +21,12 @@ module.exports = {
             },
         ],
         'import/no-unresolved': 'off',
+        'no-param-reassign': [
+            'error',
+            {
+                props: true,
+                ignorePropertyModificationsFor: ['state'],
+            },
+        ],
     },
 };

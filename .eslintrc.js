@@ -12,5 +12,14 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
         'vue/no-multiple-template-root': 'off',
+        'no-param-reassign': [
+            'error',
+            {
+                props: true,
+                ignorePropertyModificationsFor: [
+                    'state',
+                ],
+            },
+        ],
     },
 };

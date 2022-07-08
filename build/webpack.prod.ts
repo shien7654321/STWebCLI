@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import commonConfig from './webpack.common';
+import baseConfig from './webpack.base';
 
-export default merge(commonConfig, {
+export default merge(baseConfig, {
     mode: 'production',
     optimization: {
         moduleIds: 'deterministic',

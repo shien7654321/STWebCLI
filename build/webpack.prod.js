@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const commonConfig = require('./webpack.common');
+const baseConfig = require('./webpack.base');
 
-module.exports = merge(commonConfig, {
+module.exports = merge(baseConfig, {
     mode: 'production',
     optimization: {
         moduleIds: 'deterministic',

@@ -1,19 +1,54 @@
 {
-    "templates": [
-        {
-            "name": "vue3-webpack",
-            "url": ["github:shien7654321/STWebCLI#tpl-vue3-webpack"],
-            "description": "Vue 3 Project With Webpack"
-        },
-        {
-            "name": "vue3-vite",
-            "url": ["github:shien7654321/STWebCLI#tpl-vue3-vite"],
-            "description": "Vue 3 Project With Vite"
-        },
-        {
-            "name": "vue2-webpack",
-            "url": ["github:shien7654321/STWebCLI#tpl-vue2-webpack"],
-            "description": "Vue 2 Project With Webpack"
+    "template": {
+        "type": "list",
+        "message": "please select your UI framework",
+        "props": [
+            "choices"
+        ],
+        "choices": [
+            "vue3",
+            "vue2"
+        ],
+        "result": {
+            "vue3": {
+                "type": "list",
+                "message": "please select your packaging tool",
+                "props": [
+                    "choices"
+                ],
+                "choices": [
+                    "webpack",
+                    "vite"
+                ],
+                "result": {
+                    "webpack": {
+                        "type": "confirm",
+                        "message": "do you want to support SSR",
+                        "props": [
+                            "default"
+                        ],
+                        "default": false,
+                        "result": {
+                            "false": {
+                                "name": "vue3-webpack",
+                                "url": "github:shien7654321/STWebCLI#tpl-vue3-webpack"
+                            },
+                            "true": {
+                                "name": "vue3-webpack-ssr",
+                                "url": "github:shien7654321/STWebCLI#tpl-vue3-webpack-ssr"
+                            }
+                        }
+                    },
+                    "vite": {
+                        "name": "vue3-vite",
+                        "url": "github:shien7654321/STWebCLI#tpl-vue3-vite"
+                    }
+                }
+            },
+            "vue2": {
+                "name": "vue2-webpack",
+                "url": "github:shien7654321/STWebCLI#tpl-vue2-webpack"
+            }
         }
-    ]
+    }
 }

@@ -3,16 +3,17 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const ora = require('ora');
 const shelljs = require('shelljs');
+const crypto = require('crypto');
 const download = require('../common/download');
-const templates = require('../common/config.json').templates;
+const tpl = require('../common/config.json').template;
 
 async function init(projectName, options = {}, context = process.cwd()) {
     let templateName = options.template;
     if (!templateName) {
-        templateName = await askTemplate();
+        templateName = await ask(tpl);
     }
-    const templateInfo = templates.find(item => item.name === templateName);
-    if (!templateInfo) {
+    const templateUrl = getTemplateInfo()[templateName];
+    if (!templateUrl) {
         return log('no such template', 'ERROR');
     }
     const packageInfo = { name: projectName, version: '1.0.0' };
@@ -20,7 +21,7 @@ async function init(projectName, options = {}, context = process.cwd()) {
         text: 'start download template...',
         color: 'blue',
     }).start();
-    const { dir, flag } = await download(templateInfo.url, projectName, context);
+    const { dir, flag } = await download(templateUrl, projectName, context);
     if (flag) {
         downloadSpinner.succeed('download template success');
         const configSpinner = ora({
@@ -50,40 +51,35 @@ async function init(projectName, options = {}, context = process.cwd()) {
     }
 }
 
-async function askTemplate() {
-    return new Promise(resolve => {
-        let templateName = '';
+function ask(template) {
+    return new Promise(resolve1 => {
+        const promptParam = {
+            name: crypto.randomBytes(16).toString('hex'),
+        };
+        if (template.type) {
+            promptParam.type = template.type;
+        }
+        if (template.message) {
+            promptParam.message = template.message;
+        }
+        const templateProps = template.props;
+        if (Array.isArray(templateProps)) {
+            for (const templateProp of templateProps) {
+                promptParam[templateProp] = template[templateProp];
+            }
+        }
         inquirer
-            .prompt([
-                {
-                    type: 'list',
-                    message: 'please select your UI framework',
-                    name: 'ui',
-                    choices: ['vue3', 'vue2'],
-                },
-            ])
-            .then(res => {
-                if (res.ui === 'vue3') {
-                    inquirer
-                        .prompt([
-                            {
-                                type: 'list',
-                                message: 'please select your packaging tool',
-                                name: 'pack',
-                                choices: ['webpack', 'vite'],
-                            },
-                        ])
-                        .then(res => {
-                            if (res.pack === 'webpack') {
-                                templateName = 'vue3-webpack';
-                            } else if (res.pack === 'vite') {
-                                templateName = 'vue3-vite';
-                            }
-                            resolve(templateName);
-                        });
-                } else if (res.ui === 'vue2') {
-                    templateName = 'vue2-webpack';
-                    resolve(templateName);
+            .prompt([promptParam])
+            .then(async res => {
+                const result = res[promptParam.name];
+                const selectResult = template.result[String(result)];
+                if (typeof selectResult.name === 'string' && typeof selectResult.url === 'string') {
+                    resolve1(selectResult.name);
+                } else if (selectResult.type) {
+                    const templateName = await ask(selectResult);
+                    resolve1(templateName);
+                } else {
+                    resolve1();
                 }
             });
     });
@@ -100,6 +96,23 @@ async function configPackageInfo(dir, packageInfo) {
             fs.writeFile(filePath, JSON.stringify(newPackageInfo, null, 4), 'utf8', err => resolve(!Boolean(err)));
         });
     });
+}
+
+function getTemplateInfo() {
+    const templateInfo = {};
+    function findTemplate(target) {
+        const keys = Object.keys(target);
+        for (const key of keys) {
+            const value = target[key];
+            if (key === 'name' && typeof value === 'string' && keys.includes('url') && typeof target.url === 'string') {
+                templateInfo[value] = target.url;
+            } else if (typeof value === "object" && !Array.isArray(value)) {
+                findTemplate(value);
+            }
+        }
+    }
+    findTemplate(tpl);
+    return templateInfo;
 }
 
 module.exports = init;

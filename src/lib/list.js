@@ -1,14 +1,26 @@
 const log = require('../common/log');
-const templates = require('../common/config.json').templates;
+const tpl = require('../common/config.json').template;
 
 module.exports = async function (options = {}, context = process.cwd()) {
-    const templateNameQuery = options.query;
-    let filteredTemplates = templates;
-    if (templateNameQuery) {
-        filteredTemplates = filteredTemplates.filter(item => item.name.includes(templateNameQuery));
+    const templateNames = [];
+    function findTemplateName(target) {
+        for (const key of Object.keys(target)) {
+            const value = target[key];
+            if (key === 'name' && typeof value === 'string') {
+                templateNames.push(value);
+            } else if (typeof value === "object" && !Array.isArray(value)) {
+                findTemplateName(value);
+            }
+        }
     }
-    if (filteredTemplates.length) {
-        filteredTemplates.forEach(item => log(item.name));
+    findTemplateName(tpl);
+    const templateNameQuery = options.query;
+    let filteredTemplateNames = templateNames;
+    if (templateNameQuery) {
+        filteredTemplateNames = filteredTemplateNames.filter(item => item.includes(templateNameQuery));
+    }
+    if (filteredTemplateNames.length) {
+        filteredTemplateNames.forEach(item => log(item));
     } else {
         log('No matching template.', 'WARNING');
     }

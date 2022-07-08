@@ -8,9 +8,6 @@ Web CLI template in the specified branch.
 # install dependencies
 yarn
 
-# serve with hot reload at localhost
-yarn dev
-
 # build for production with minification
 yarn build
 
@@ -19,6 +16,9 @@ yarn build:client
 
 # build for server production with minification
 yarn build:server
+
+# serve with hot reload at localhost
+yarn dev
 
 # code inspection
 yarn lint

@@ -4,9 +4,9 @@
     "main": "src/main.ts",
     "license": "MIT",
     "scripts": {
+        "build": "yarn build:client && yarn build:server",
         "build:client": "cross-env CLEAN=1 TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.prod.ts",
         "build:server": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.server.ts",
-        "build": "yarn build:client && yarn build:server",
         "dev": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack serve --progress --config build/webpack.dev.ts",
         "server": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" nodemon build/server.ts",
         "lint": "eslint --fix \"src/**/*.{vue,js,ts,jsx,tsx}\"",

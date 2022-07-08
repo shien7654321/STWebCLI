@@ -1,14 +1,34 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
+import nodeExternals from 'webpack-node-externals';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import clientConfig from './webpack.client';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
+import baseConfig from './webpack.base';
 
-export default merge(clientConfig, {
+export default merge(baseConfig, {
+    target: 'node',
     mode: 'production',
-    optimization: {
-        moduleIds: 'deterministic',
+    entry: {
+        main: './src/entry-server.ts',
     },
+    output: {
+        filename: 'static/js/[name].[chunkhash:8].server.js',
+        libraryTarget: 'commonjs2',
+    },
+    optimization: {
+        splitChunks: false,
+        minimize: false,
+    },
+    externals: [
+        nodeExternals({
+            allowlist: [/\.(css|less|sass|scss)$/, /\.(vue)$/, /\.(html)$/],
+        }),
+    ],
     devtool: 'nosources-source-map',
+    node: {
+        __dirname: false,
+        __filename: false,
+    },
     module: {
         rules: [
             {
@@ -68,6 +88,12 @@ export default merge(clientConfig, {
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             ignoreOrder: true,
+        }),
+        new WebpackManifestPlugin({
+            fileName: 'ssr-manifest.json',
+        }),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1,
         }),
     ],
 });

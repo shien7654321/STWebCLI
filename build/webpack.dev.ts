@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import commonConfig from './webpack.common';
+import clientConfig from './webpack.client';
 
-export default merge(commonConfig, {
+export default merge(clientConfig, {
     mode: 'development',
     optimization: {
         moduleIds: 'named',

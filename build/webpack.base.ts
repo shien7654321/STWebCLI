@@ -4,7 +4,6 @@ import { VueLoaderPlugin } from 'vue-loader';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import HtmlPlugin from 'html-webpack-plugin';
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -12,15 +11,9 @@ function resolve(dir) {
 
 const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
     context: resolve('/'),
-    target: 'web',
-    entry: {
-        main: './src/main.ts',
-        vendor: ['vue'],
-    },
     output: {
         path: resolve('dist'),
-        clean: true,
-        filename: 'static/js/[name].[chunkhash:8].client.js',
+        clean: Boolean(process.env.CLEAN),
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.vue', '.json'],
@@ -142,12 +135,6 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
         new CompressionPlugin({
             test: /\.(js|css)$/,
             threshold: 10240,
-        }),
-        new HtmlPlugin({
-            template: './index.html',
-            filename: 'index.html',
-            chunks: ['main', 'vendor'],
-            title: 'STWebCLITemplate',
         }),
         new webpack.ProvidePlugin({
             process: 'process/browser',

@@ -2,17 +2,23 @@
 
 Web CLI template in the specified branch.
 
-## Vue 3 Project With Webpack
+## Vue 3 Project With Webpack Support SSR
 
 ```bash
 # install dependencies
 yarn
 
 # serve with hot reload at localhost
-yarn start
+yarn dev
 
 # build for production with minification
 yarn build
+
+# build for client production with minification
+yarn build:client
+
+# build for server production with minification
+yarn build:server
 
 # code inspection
 yarn lint

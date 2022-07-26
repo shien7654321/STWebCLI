@@ -24,17 +24,17 @@
         "vue": "^3.2.37"
     },
     "devDependencies": {
-        "@types/node": "^18.0.6",
-        "@typescript-eslint/eslint-plugin": "^5.30.7",
-        "@typescript-eslint/parser": "^5.30.7",
-        "@vitejs/plugin-legacy": "1.8.2",
-        "@vitejs/plugin-vue": "2.3.3",
-        "@vitejs/plugin-vue-jsx": "1.3.10",
+        "@types/node": "^18.6.1",
+        "@typescript-eslint/eslint-plugin": "^5.31.0",
+        "@typescript-eslint/parser": "^5.31.0",
+        "@vitejs/plugin-legacy": "2.0.0",
+        "@vitejs/plugin-vue": "3.0.1",
+        "@vitejs/plugin-vue-jsx": "2.0.0",
         "autoprefixer": "^10.4.7",
         "eslint": "^8.20.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-vue": "^9.2.0",
+        "eslint-plugin-vue": "^9.3.0",
         "less": "^4.1.3",
         "postcss": "^8.4.14",
         "postcss-html": "^1.5.0",
@@ -43,8 +43,9 @@
         "stylelint": "^14.9.1",
         "stylelint-config-recommended-vue": "^1.4.0",
         "stylelint-config-standard": "^26.0.0",
+        "terser": "^5.14.2",
         "typescript": "^4.7.4",
-        "vite": "^2.9.14",
+        "vite": "^3.0.2",
         "vite-plugin-compression": "^0.5.1"
     }
 }

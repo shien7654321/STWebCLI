@@ -44,6 +44,7 @@ module.exports = {
         ],
     },
     stats: {
+        children: true,
         errorDetails: true,
     },
     performance: {

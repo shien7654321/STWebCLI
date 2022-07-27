@@ -9,7 +9,7 @@ module.exports = {
         'import/extensions': ['.js', '.mjs'],
     },
     rules: {
-        indent: ['error', 4],
+        indent: ['error', 4, { SwitchCase: 1 }],
         'vue/multi-word-component-names': 'off',
         'vue/no-v-model-argument': 'off',
         'import/extensions': [
@@ -26,6 +26,12 @@ module.exports = {
             {
                 props: true,
                 ignorePropertyModificationsFor: ['state'],
+            },
+        ],
+        'max-len': [
+            'error',
+            {
+                code: 120,
             },
         ],
     },

@@ -6,7 +6,7 @@ module.exports = {
         parser: '@typescript-eslint/parser',
     },
     rules: {
-        indent: ['error', 4],
+        indent: ['error', 4, { SwitchCase: 1 }],
         'vue/multi-word-component-names': 'off',
         'vue/no-v-model-argument': 'off',
         'import/extensions': 'off',
@@ -17,6 +17,12 @@ module.exports = {
             {
                 props: true,
                 ignorePropertyModificationsFor: ['state'],
+            },
+        ],
+        'max-len': [
+            'error',
+            {
+                code: 120,
             },
         ],
     },

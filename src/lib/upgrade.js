@@ -10,9 +10,9 @@ const notifier = updateNotifier({
 
 module.exports = function () {
     if (notifier.update) {
-        log(`new version available: ${chalk.cyan(notifier.update.latest)}`);
+        log('info', `new version available: ${chalk.cyan(notifier.update.latest)}`);
         notifier.notify();
     } else {
-        log('no new version is available');
+        log('info', 'no new version is available');
     }
 };

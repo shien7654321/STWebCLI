@@ -18,7 +18,7 @@ module.exports = function () {
         function errCallback(err) {
             file && fs.unlink(filePath, () => {});
             spinner.fail('update fail');
-            err && log(err, 'ERROR');
+            err && log('error', err);
         }
 
         https

@@ -20,9 +20,9 @@ module.exports = async function (options = {}, context = process.cwd()) {
         filteredTemplateNames = filteredTemplateNames.filter(item => item.includes(templateNameQuery));
     }
     if (filteredTemplateNames.length) {
-        filteredTemplateNames.forEach(item => log(item));
+        filteredTemplateNames.forEach(item => log('info', item));
     } else {
-        log('No matching template.', 'WARNING');
+        log('warn', 'No matching template.');
     }
     process.exit(0);
 };

@@ -11,7 +11,7 @@ module.exports = async function (url, name, target = process.cwd()) {
         function downLoadCallback(err) {
             if (err) {
                 resolve({ flag: false, dir, name });
-                log(err, 'ERROR');
+                log('error', err);
             }
             resolve({ flag: true, dir, name });
         }

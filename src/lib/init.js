@@ -14,7 +14,7 @@ async function init(projectName, options = {}, context = process.cwd()) {
     }
     const templateUrl = getTemplateInfo()[templateName];
     if (!templateUrl) {
-        return log('no such template', 'ERROR');
+        return log('error', 'no such template');
     }
     const packageInfo = { name: projectName, version: '1.0.0' };
     const downloadSpinner = ora({
@@ -36,9 +36,9 @@ async function init(projectName, options = {}, context = process.cwd()) {
                     text: 'start install project...',
                     color: 'blue',
                 }).start();
-                log('\n');
+                log('info', '\n');
                 shelljs.exec(`cd ${projectName} && yarn && cd ..`);
-                log('\n');
+                log('info', '\n');
                 installSpinner.succeed('create project success');
             } else {
                 configSpinner.succeed('create project success');

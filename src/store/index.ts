@@ -1,21 +1,19 @@
-import { createStore } from 'vuex';
+import { defineStore } from 'pinia';
 
-export default () => createStore({
-    state() {
-        return {
-            count: 0,
-        };
-    },
-    mutations: {
-        increment(state) {
-            state.count += 1;
+const mainStore = defineStore('main', {
+    state: () => ({
+        time: new Date(),
+    }),
+    getters: {
+        timestamp(state): number {
+            return state.time.getTime();
         },
     },
     actions: {
-        increment({ commit }) {
-            setTimeout(() => {
-                commit('increment');
-            }, 300);
+        updateTime() {
+            this.time = new Date();
         },
     },
 });
+
+export default mainStore;

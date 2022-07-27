@@ -20,9 +20,7 @@ export default merge(clientConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -41,9 +39,7 @@ export default merge(clientConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -68,9 +64,7 @@ export default merge(clientConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {

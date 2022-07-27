@@ -1,32 +1,36 @@
 <template>
+    <img class="home-logo" src="@/assets/image/STWebCLITemplate.png" alt="" />
     <router-link class="home-link" to="/about"> About </router-link>
     Home
-    <p>count: {{ count }}</p>
-    <button @click="handleClick">increment</button>
+    <p>time: {{ store.time }}</p>
+    <button @click="handleUpdate">update</button>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { useStore } from 'vuex';
+import { defineComponent } from 'vue';
+import mainStore from '../../store';
 
 export default defineComponent({
     name: 'Home',
     setup() {
-        const store = useStore();
-        const count = computed<number>(() => store.state.count);
-        function handleClick() {
-            store.dispatch('increment');
+        const store = mainStore();
+        function handleUpdate() {
+            store.updateTime();
         }
         return {
-            count,
+            store,
 
-            handleClick,
+            handleUpdate,
         };
     },
 });
 </script>
 
 <style lang="less" scoped>
+.home-logo {
+    width: 400px;
+}
+
 .home-link {
     display: block;
 }

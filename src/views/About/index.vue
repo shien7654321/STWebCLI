@@ -1,20 +1,19 @@
 <template>
     <router-link to="/">Home</router-link>
-    <p>count: {{ count }}</p>
+    <p>timestamp: {{ store.timestamp }}</p>
     About
 </template>
 
 <script>
-import { defineComponent, computed } from 'vue';
-import { useStore } from 'vuex';
+import { defineComponent } from 'vue';
+import mainStore from '../../store';
 
 export default defineComponent({
     name: 'About',
     setup() {
-        const store = useStore();
-        const count = computed(() => store.state.count);
+        const store = mainStore();
         return {
-            count,
+            store,
         };
     },
 });

@@ -1,7 +1,9 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import clientConfig from './webpack.client';
+import { resolve } from './webpack.base';
 
 export default merge(clientConfig, {
     mode: 'production',
@@ -68,6 +70,15 @@ export default merge(clientConfig, {
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             ignoreOrder: true,
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: resolve('public'),
+                    to: '.',
+                    filter: item => !/index.html$/.test(item),
+                },
+            ],
         }),
     ],
 });

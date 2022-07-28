@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const baseConfig = require('./webpack.base');
 
 module.exports = merge(baseConfig, {
@@ -20,9 +19,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -41,9 +38,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -68,9 +63,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -99,10 +92,6 @@ module.exports = merge(baseConfig, {
         new webpack.DefinePlugin({
             __VUE_PROD_DEVTOOLS__: true,
             ENV: JSON.stringify('development'),
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'static/css/[name].css',
-            ignoreOrder: true,
         }),
     ],
     devServer: {

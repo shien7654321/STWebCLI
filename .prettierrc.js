@@ -4,5 +4,5 @@ module.exports = {
     singleQuote: true,
     jsxSingleQuote: true,
     arrowParens: 'avoid',
-    singleAttributePerLine: true,
+    singleAttributePerLine: false,
 };

@@ -1,20 +1,24 @@
 <template>
-    <router-link to="/">Home</router-link>
-    <p>timestamp: {{ store.timestamp }}</p>
-    About
+    <div class="about">
+        <img
+            src="@/assets/image/STWebCLITemplate.png"
+            alt=""
+        />
+        <p>About</p>
+        <router-link to="/">Home</router-link>
+    </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import mainStore from '../../store';
 
 export default defineComponent({
     name: 'About',
-    setup() {
-        const store = mainStore();
-        return {
-            store,
-        };
-    },
 });
 </script>
+
+<style lang="less" scoped>
+.about {
+    text-align: center;
+}
+</style>

@@ -14,11 +14,20 @@ yarn build
 # build for client production with minification
 yarn build:client
 
-# build for server production with minification
+# build for server production
 yarn build:server
+
+# build for node server production
+yarn build:node
+
+# run ssr on node server, you need to run build before this
+yarn ssr
 
 # serve with hot reload at localhost
 yarn dev
+
+# serve on ssr with hot reload at localhost
+yarn dev:ssr
 
 # code inspection
 yarn lint

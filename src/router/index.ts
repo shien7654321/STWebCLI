@@ -1,9 +1,5 @@
 import {
-    createMemoryHistory,
-    createRouter,
-    createWebHashHistory,
-    RouteRecordRaw,
-    RouterHistory,
+    createMemoryHistory, createRouter, createWebHashHistory, RouteRecordRaw, RouterHistory,
 } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [

@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import log from './log';
 
+export const RENDER_EXCLUDE_REG = /\.(map|png|json|svg|jpg|ico|html(\?.*)?|js|css)$/i;
+
 export interface IRenderOption {
-    serverManifest: {
-        [k: string]: string;
-    };
     clientManifest: {
         [k: string]: string;
     };
@@ -25,8 +24,7 @@ async function ssrRender(req: Request, res: Response, options: IRenderOption) {
 function renderHtml(options: IRenderOption) {
     // eslint-disable-next-line consistent-return,func-names
     return async function (req: Request, res: Response, next: NextFunction) {
-        const excludeReg = /\.(map|png|json|svg|jpg|ico|html(\?.*)?|js|css)$/i;
-        if (!req.url || excludeReg.test(req.url)) {
+        if (!req.url || RENDER_EXCLUDE_REG.test(req.url)) {
             return next();
         }
         const csr = /^csr$/.test(req.url);

@@ -1,0 +1,14 @@
+{
+    "restartable": "rs",
+    "verbose": true,
+    "execMap": {
+        "js": "node --harmony",
+        "ts": "ts-node"
+    },
+    "delay": 1000,
+    "watch": ["server"],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "ts"
+}

@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import clientConfig from './webpack.client';
 
 export default merge(clientConfig, {
@@ -93,10 +92,6 @@ export default merge(clientConfig, {
         new webpack.DefinePlugin({
             __VUE_PROD_DEVTOOLS__: true,
             ENV: JSON.stringify('development'),
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'static/css/[name].css',
-            ignoreOrder: true,
         }),
     ],
     devServer: {

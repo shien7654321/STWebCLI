@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import baseConfig from './webpack.base';
 
 export default merge(baseConfig, {
@@ -20,9 +19,7 @@ export default merge(baseConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -41,9 +38,7 @@ export default merge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -68,9 +63,7 @@ export default merge(baseConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -99,10 +92,6 @@ export default merge(baseConfig, {
         new webpack.DefinePlugin({
             __VUE_PROD_DEVTOOLS__: true,
             ENV: JSON.stringify('development'),
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'static/css/[name].css',
-            ignoreOrder: true,
         }),
     ],
     devServer: {

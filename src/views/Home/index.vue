@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <img src="@/assets/image/STWebCLITemplate.png" alt="" />
+        <img class="home__logo" src="@/assets/image/STWebCLITemplate.png" alt="" />
         <p>Home</p>
         <router-link class="home-link" to="/about"> About </router-link>
     </div>
@@ -17,5 +17,9 @@ export default defineComponent({
 <style lang="less" scoped>
 .home {
     text-align: center;
+
+    &__logo {
+        width: 300px;
+    }
 }
 </style>

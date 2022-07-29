@@ -1,3 +1,6 @@
+/**
+ * webpack client config, support dev and prod
+ */
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';

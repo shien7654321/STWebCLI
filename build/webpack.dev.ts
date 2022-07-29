@@ -1,3 +1,6 @@
+/**
+ * webpack dev config
+ */
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import clientConfig from './webpack.client';

@@ -1,3 +1,6 @@
+/**
+ * webpack prod config
+ */
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';

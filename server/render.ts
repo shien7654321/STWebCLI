@@ -1,3 +1,6 @@
+/**
+ * server-side rendering
+ */
 import { Request, Response, NextFunction } from 'express';
 import log from './log';
 

@@ -1,16 +1,8 @@
 <template>
     <div class="home">
-        <img
-            src="@/assets/image/STWebCLITemplate.png"
-            alt=""
-        />
+        <img src="@/assets/image/STWebCLITemplate.png" alt="" />
         <p>Home</p>
-        <router-link
-            class="home-link"
-            to="/about"
-        >
-            About
-        </router-link>
+        <router-link class="home-link" to="/about"> About </router-link>
     </div>
 </template>
 

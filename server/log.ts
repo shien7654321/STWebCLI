@@ -1,3 +1,6 @@
+/**
+ * output log in node environment
+ */
 import chalk from 'chalk';
 
 type LogType = 'warn' | 'error' | 'success' | 'info';

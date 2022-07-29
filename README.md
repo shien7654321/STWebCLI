@@ -8,16 +8,16 @@ Web CLI template in the specified branch.
 # install dependencies
 yarn
 
-# build for production with minification
+# build client, server and node
 yarn build
 
-# build for client production with minification
+# build for client
 yarn build:client
 
-# build for server production
+# build for server
 yarn build:server
 
-# build for node server production
+# build for node server
 yarn build:node
 
 # run ssr on node server, you need to run build before this

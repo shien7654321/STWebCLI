@@ -1,3 +1,6 @@
+/**
+ * webpack base config, support app and node
+ */
 import path from 'path';
 import webpack from 'webpack';
 

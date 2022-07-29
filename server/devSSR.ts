@@ -1,4 +1,6 @@
-import path from 'path';
+/**
+ * ssr at localhost entry
+ */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import MemoryFS from 'memory-fs';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -7,6 +9,7 @@ import webpack, { Configuration, WebpackPluginInstance } from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import webpackHotMiddleware from 'webpack-hot-middleware';
+import path from 'path';
 import express, { Express } from 'express';
 import fs from 'fs';
 import devConfig from '../build/webpack.dev';

@@ -1,3 +1,6 @@
+/**
+ * webpack app config, support client and server
+ */
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';

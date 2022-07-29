@@ -1,5 +1,5 @@
 import {
-    createMemoryHistory, createRouter, createWebHashHistory, RouteRecordRaw, RouterHistory,
+    createMemoryHistory, createRouter, createWebHistory, RouteRecordRaw, RouterHistory,
 } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
@@ -14,7 +14,7 @@ const routes: RouteRecordRaw[] = [
 ];
 
 export default () => {
-    const history: RouterHistory = process.env.IS_NODE ? createMemoryHistory() : createWebHashHistory();
+    const history: RouterHistory = process.env.IS_NODE ? createMemoryHistory() : createWebHistory();
     return createRouter({
         history,
         routes,

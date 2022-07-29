@@ -30,9 +30,18 @@ function renderHtml(options: IRenderOption) {
         if (!req.url || RENDER_EXCLUDE_REG.test(req.url)) {
             return next();
         }
-        const csr = /^csr$/.test(req.url);
+        let isCSR = false;
+        const questionIndex = req.url.indexOf('?');
+        if (questionIndex !== -1) {
+            const urlSearchParams = new URLSearchParams(req.url.substring(questionIndex).toLowerCase());
+            let csr: string = urlSearchParams.get('csr') || '';
+            if (['0', 'false', 'null', 'undefined', 'NaN'].includes(csr)) {
+                csr = '';
+            }
+            isCSR = Boolean(csr);
+        }
         let { html } = options;
-        if (!csr && options.app) {
+        if (!isCSR && options.app) {
             try {
                 html = await ssrRender(req, res, options);
             } catch (err) {

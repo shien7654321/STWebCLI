@@ -4,7 +4,7 @@
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
-import baseConfig, { resolve } from './webpack.base';
+import baseConfig from './webpack.base';
 
 export default merge(baseConfig, {
     module: {

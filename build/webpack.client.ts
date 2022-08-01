@@ -104,6 +104,7 @@ export default merge(appConfig, {
         }),
         new WebpackManifestPlugin({
             fileName: 'client-manifest.json',
+            publicPath: '',
         }),
         new CompressionPlugin({
             test: /\.(js|css)$/,

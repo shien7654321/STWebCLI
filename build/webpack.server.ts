@@ -88,6 +88,7 @@ export default merge(appConfig, {
         }),
         new WebpackManifestPlugin({
             fileName: 'server-manifest.json',
+            publicPath: '',
         }),
     ],
 });

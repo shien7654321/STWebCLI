@@ -12,7 +12,6 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
     context: resolve('/'),
     output: {
         clean: true,
-        publicPath: 'auto',
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.vue', '.json'],

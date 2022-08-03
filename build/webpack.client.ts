@@ -4,12 +4,12 @@
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
-import appConfig from './webpack.app';
-import { resolve } from './webpack.base';
 import HtmlPlugin from 'html-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
+import appConfig from './webpack.app';
+import { resolve } from './webpack.base';
 
 export default merge(appConfig, {
     target: 'web',

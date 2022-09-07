@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const baseConfig = require('./webpack.base');
 
 module.exports = merge(baseConfig, {
@@ -68,6 +69,10 @@ module.exports = merge(baseConfig, {
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             ignoreOrder: true,
+        }),
+        new CompressionPlugin({
+            test: /\.(js|css)$/,
+            threshold: 10240,
         }),
     ],
 });

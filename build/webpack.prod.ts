@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 import baseConfig from './webpack.base';
 
 export default merge(baseConfig, {
@@ -68,6 +69,10 @@ export default merge(baseConfig, {
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             ignoreOrder: true,
+        }),
+        new CompressionPlugin({
+            test: /\.(js|css)$/,
+            threshold: 10240,
         }),
     ],
 });

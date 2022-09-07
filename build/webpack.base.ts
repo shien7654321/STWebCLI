@@ -3,7 +3,6 @@ import webpack from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import CompressionPlugin from 'compression-webpack-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
 
 function resolve(dir) {
@@ -140,10 +139,6 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
             'process.env': JSON.stringify(process.env),
         }),
         new VueLoaderPlugin(),
-        new CompressionPlugin({
-            test: /\.(js|css)$/,
-            threshold: 10240,
-        }),
         new HtmlPlugin({
             template: './index.html',
             filename: 'index.html',

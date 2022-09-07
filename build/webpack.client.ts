@@ -5,7 +5,6 @@ import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
-import CompressionPlugin from 'compression-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import appConfig from './webpack.app';
@@ -105,10 +104,6 @@ export default merge(appConfig, {
         new WebpackManifestPlugin({
             fileName: 'client-manifest.json',
             publicPath: '',
-        }),
-        new CompressionPlugin({
-            test: /\.(js|css)$/,
-            threshold: 10240,
         }),
     ],
 });

@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import { merge } from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 import clientConfig from './webpack.client';
 import { resolve } from './webpack.base';
 
@@ -82,6 +83,10 @@ export default merge(clientConfig, {
                     filter: item => !/index.html$/.test(item),
                 },
             ],
+        }),
+        new CompressionPlugin({
+            test: /\.(js|css)$/,
+            threshold: 10240,
         }),
     ],
 });

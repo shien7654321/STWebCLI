@@ -8,9 +8,9 @@
         "build:client": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.prod.ts",
         "build:server": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.server.ts",
         "build:node": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.node.ts",
-        "ssr": "nodemon dist/node/server.js",
+        "ssr": "nodemon dist/node/server.js --config nodemon.json",
         "dev": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack serve --progress --config build/webpack.dev.ts",
-        "dev:ssr": "nodemon server/devSSR.ts",
+        "dev:ssr": "nodemon server/devSSR.ts --config nodemon.json",
         "lint": "eslint --fix \"src/**/*.{vue,js,ts,jsx,tsx}\"",
         "lint-style": "stylelint --fix \"src/**/*.{html,vue,css,less,sass,scss,styl,jsx,tsx}\"",
         "prettier": "prettier --write \"src\""

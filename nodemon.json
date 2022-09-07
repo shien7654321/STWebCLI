@@ -6,7 +6,7 @@
         "ts": "ts-node"
     },
     "delay": 1000,
-    "watch": ["server"],
+    "watch": ["server", "dist/node"],
     "env": {
         "NODE_ENV": "development"
     },

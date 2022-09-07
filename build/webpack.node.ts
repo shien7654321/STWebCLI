@@ -63,5 +63,8 @@ export default merge(baseConfig, {
         new webpack.DefinePlugin({
             'process.env.IS_NODE': true,
         }),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1
+        }),
     ],
 });

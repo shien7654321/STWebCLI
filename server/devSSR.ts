@@ -11,7 +11,6 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import path from 'path';
 import express, { Express } from 'express';
-import fs from 'fs';
 import devConfig from '../build/webpack.dev';
 import serverConfig from '../build/webpack.server';
 import renderHtml, { RENDER_EXCLUDE_REG } from './render';
@@ -44,6 +43,19 @@ const serverCompiler = webpack({
     plugins: [...(serverConfig.plugins as WebpackPluginInstance[]), new webpack.ProgressPlugin()],
 } as Configuration);
 
+function createCJSModule(code: string) {
+    const module = {
+        exports: {
+            default: () => {},
+        },
+    };
+    // eslint-disable-next-line no-eval
+    eval(`(function () {
+        ${code}
+    })(module);`);
+    return module.exports;
+}
+
 function devMiddleware(server: Express) {
     server.use(
         express.static(path.join(__dirname, '../public'), {
@@ -52,14 +64,12 @@ function devMiddleware(server: Express) {
     );
     const clientMiddleware = webpackDevMiddleware(clientCompiler, {
         index: false,
-        serverSideRender: true,
-        // @ts-ignore
-        methods: ['GET'],
         outputFileSystem: memoryFS,
+        serverSideRender: true,
     });
     const serverMiddleware = webpackDevMiddleware(serverCompiler, {
         index: false,
-        writeToDisk: true,
+        outputFileSystem: memoryFS,
     });
 
     server.use(clientMiddleware);
@@ -69,17 +79,17 @@ function devMiddleware(server: Express) {
         if (!req.url || RENDER_EXCLUDE_REG.test(req.url)) {
             return next();
         }
-        const clientManifestPath = `${clientCompiler.outputPath}/client-manifest.json`;
-        const serverManifestPath = `${serverCompiler.outputPath}/server-manifest.json`;
-        const htmlPath = `${clientCompiler.outputPath}/index.html`;
+        const clientManifestPath = path.join(clientCompiler.outputPath, 'client-manifest.json');
+        const serverManifestPath = path.join(serverCompiler.outputPath, 'server-manifest.json');
+        const htmlPath = path.join(clientCompiler.outputPath, 'index.html');
 
         const clientManifest = JSON.parse(memoryFS.readFileSync(clientManifestPath, 'utf-8'));
-        const serverManifest = JSON.parse(fs.readFileSync(serverManifestPath, 'utf-8'));
+        const serverManifest = JSON.parse(memoryFS.readFileSync(serverManifestPath, 'utf-8'));
         const html = memoryFS.readFileSync(htmlPath, 'utf-8');
 
-        const appPath: string = path.join(serverCompiler.outputPath, serverManifest['main.js']);
-        // eslint-disable-next-line global-require,import/no-dynamic-require
-        const app = require(appPath).default;
+        const appPath = path.join(serverCompiler.outputPath, serverManifest['main.js']);
+        const appContent = memoryFS.readFileSync(appPath, 'utf-8');
+        const app = createCJSModule(appContent).default;
         return renderHtml({
             clientManifest,
             html,

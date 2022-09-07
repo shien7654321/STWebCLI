@@ -90,5 +90,8 @@ export default merge(appConfig, {
             fileName: 'server-manifest.json',
             publicPath: '',
         }),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1
+        }),
     ],
 });

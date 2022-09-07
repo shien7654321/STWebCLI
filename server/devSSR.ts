@@ -16,6 +16,19 @@ import serverConfig from '../build/webpack.server';
 import renderHtml, { RENDER_EXCLUDE_REG } from './render';
 import log from './log';
 
+function createCJSModule(code: string) {
+    const module = {
+        exports: {
+            default: () => {},
+        },
+    };
+    // eslint-disable-next-line no-eval
+    eval(`(function () {
+        ${code}
+    })(module);`);
+    return module.exports;
+}
+
 const PORT = 8081;
 const memoryFS = new MemoryFS();
 
@@ -42,19 +55,6 @@ const serverCompiler = webpack({
     ...serverConfig,
     plugins: [...(serverConfig.plugins as WebpackPluginInstance[]), new webpack.ProgressPlugin()],
 } as Configuration);
-
-function createCJSModule(code: string) {
-    const module = {
-        exports: {
-            default: () => {},
-        },
-    };
-    // eslint-disable-next-line no-eval
-    eval(`(function () {
-        ${code}
-    })(module);`);
-    return module.exports;
-}
 
 function devMiddleware(server: Express) {
     server.use(

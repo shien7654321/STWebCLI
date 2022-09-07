@@ -35,9 +35,6 @@ export default defineConfig(({ command, mode }) => {
         plugins: [
             VuePlugin(),
             VueJsxPlugin(),
-            CompressionPlugin({
-                threshold: 10240,
-            }),
             LegacyPlugin(),
         ],
         server: {
@@ -45,6 +42,11 @@ export default defineConfig(({ command, mode }) => {
             open: true,
         },
     };
+    if (command === 'build') {
+        config.plugins?.push(CompressionPlugin({
+            threshold: 10240,
+        }));
+    }
     config.build!.sourcemap = command === 'serve';
     return config;
 });

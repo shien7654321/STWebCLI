@@ -5,11 +5,11 @@ import {
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        component: () => import('@/views/Home/index.vue'),
+        component: () => import(/* webpackChunkName: "Home" */'@/views/Home/index.vue'),
     },
     {
         path: '/about',
-        component: () => import('@/views/About/index.vue'),
+        component: () => import(/* webpackChunkName: "About" */'@/views/About/index.vue'),
     },
 ];
 

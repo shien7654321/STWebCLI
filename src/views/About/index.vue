@@ -2,7 +2,7 @@
     <div class="about">
         <img class="about__logo" src="@/assets/image/STWebCLITemplate.png" alt="" />
         <p>About</p>
-        <router-link to="/">Home</router-link>
+        <router-link to="Home">Home</router-link>
     </div>
 </template>
 

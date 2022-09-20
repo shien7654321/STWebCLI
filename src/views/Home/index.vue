@@ -2,7 +2,7 @@
     <div class="home">
         <img class="home__logo" src="@/assets/image/STWebCLITemplate.png" alt="" />
         <p>Home</p>
-        <router-link class="home__link" to="About"> About </router-link>
+        <router-link to="/about"> About </router-link>
     </div>
 </template>
 
@@ -20,10 +20,6 @@ export default defineComponent({
 
     &__logo {
         width: 300px;
-    }
-
-    &__link {
-        display: block;
     }
 }
 </style>

@@ -15,7 +15,7 @@ export default merge(appConfig, {
     entry: './src/entry/entry-client.ts',
     output: {
         path: resolve('dist/client'),
-        filename: 'static/js/[name].[chunkhash:8].client.js',
+        filename: 'js/[name].[chunkhash:8].client.js',
     },
     optimization: {
         minimizer: [
@@ -61,7 +61,7 @@ export default merge(appConfig, {
                 test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
                 type: 'asset',
                 generator: {
-                    filename: 'static/img/[name].[hash:8][ext]',
+                    filename: 'img/[name].[hash:8][ext]',
                 },
                 parser: {
                     dataUrlCondition: {
@@ -73,14 +73,14 @@ export default merge(appConfig, {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 type: 'asset',
                 generator: {
-                    filename: 'static/font/[name].[hash:8][ext]',
+                    filename: 'font/[name].[hash:8][ext]',
                 },
             },
             {
                 test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
                 type: 'asset',
                 generator: {
-                    filename: 'static/media/[name].[hash:8][ext]',
+                    filename: 'media/[name].[hash:8][ext]',
                 },
             },
         ],

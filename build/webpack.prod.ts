@@ -72,7 +72,7 @@ export default merge(clientConfig, {
             ENV: JSON.stringify('production'),
         }),
         new MiniCssExtractPlugin({
-            filename: 'static/css/[name].[contenthash:8].css',
+            filename: 'css/[name].[contenthash:8].css',
             ignoreOrder: true,
         }),
         new CopyPlugin({

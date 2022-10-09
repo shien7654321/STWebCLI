@@ -15,7 +15,7 @@ export default merge(appConfig, {
     entry: './src/entry/entry-server.ts',
     output: {
         path: resolve('dist/server'),
-        filename: 'static/js/[name].[chunkhash:8].server.js',
+        filename: 'js/[name].[chunkhash:8].server.js',
         libraryTarget: 'commonjs2',
     },
     optimization: {
@@ -83,7 +83,7 @@ export default merge(appConfig, {
             'process.env.IS_NODE': true,
         }),
         new MiniCssExtractPlugin({
-            filename: 'static/css/[name].[contenthash:8].css',
+            filename: 'css/[name].[contenthash:8].css',
             ignoreOrder: true,
         }),
         new WebpackManifestPlugin({

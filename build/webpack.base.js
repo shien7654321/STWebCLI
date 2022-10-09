@@ -12,10 +12,7 @@ function resolve(dir) {
 module.exports = {
     context: resolve('/'),
     target: 'web',
-    entry: {
-        main: './src/main.js',
-        vendor: ['vue'],
-    },
+    entry: './src/main.js',
     output: {
         path: resolve('dist'),
         clean: true,
@@ -123,7 +120,6 @@ module.exports = {
         new HtmlPlugin({
             template: './index.html',
             filename: 'index.html',
-            chunks: ['main', 'vendor'],
             title: 'STWebCLITemplate',
         }),
         new webpack.ProvidePlugin({

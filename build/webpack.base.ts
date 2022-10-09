@@ -12,10 +12,7 @@ function resolve(dir) {
 const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
     context: resolve('/'),
     target: 'web',
-    entry: {
-        main: './src/main.ts',
-        vendor: ['vue'],
-    },
+    entry: './src/main.ts',
     output: {
         path: resolve('dist'),
         clean: true,
@@ -142,7 +139,6 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
         new HtmlPlugin({
             template: './index.html',
             filename: 'index.html',
-            chunks: ['main', 'vendor'],
             title: 'STWebCLITemplate',
         }),
         new webpack.ProvidePlugin({

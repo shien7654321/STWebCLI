@@ -16,7 +16,7 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
     output: {
         path: resolve('dist'),
         clean: true,
-        filename: 'static/js/[name].[chunkhash:8].client.js',
+        filename: 'js/[name].[chunkhash:8].client.js',
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.vue', '.json'],
@@ -108,7 +108,7 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
                 test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
                 type: 'asset',
                 generator: {
-                    filename: 'static/img/[name].[hash:8][ext]',
+                    filename: 'img/[name].[hash:8][ext]',
                 },
                 parser: {
                     dataUrlCondition: {
@@ -120,7 +120,7 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 type: 'asset',
                 generator: {
-                    filename: 'static/font/[name].[hash:8][ext]',
+                    filename: 'font/[name].[hash:8][ext]',
                 },
                 parser: {
                     dataUrlCondition: {

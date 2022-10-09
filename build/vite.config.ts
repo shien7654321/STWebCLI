@@ -24,9 +24,9 @@ export default defineConfig(({ command, mode }) => {
                     vendor: ['vue'],
                 },
                 output: {
-                    entryFileNames: 'static/js/[name].[hash].client.js',
-                    chunkFileNames: 'static/js/[name].[hash].client.js',
-                    assetFileNames: 'static/[ext]/[name].[hash].[ext]',
+                    entryFileNames: 'js/[name].[hash].client.js',
+                    chunkFileNames: 'js/[name].[hash].client.js',
+                    assetFileNames: '[ext]/[name].[hash].[ext]',
                 },
             },
             assetsDir: 'static',

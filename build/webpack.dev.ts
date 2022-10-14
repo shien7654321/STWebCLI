@@ -83,7 +83,6 @@ export default merge(baseConfig, {
                             sourceMap: true,
                         },
                     },
-                    'css-unicode-loader',
                 ],
             },
         ],

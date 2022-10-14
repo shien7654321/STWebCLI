@@ -62,7 +62,6 @@ export default merge(clientConfig, {
                     },
                     'postcss-loader',
                     'sass-loader',
-                    'css-unicode-loader',
                 ],
             },
         ],

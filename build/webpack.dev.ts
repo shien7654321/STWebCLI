@@ -86,7 +86,6 @@ export default merge(clientConfig, {
                             sourceMap: true,
                         },
                     },
-                    'css-unicode-loader',
                 ],
             },
         ],

@@ -19,7 +19,7 @@ export default merge(baseConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -38,7 +38,7 @@ export default merge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -63,7 +63,7 @@ export default merge(baseConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {

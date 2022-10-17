@@ -24,7 +24,7 @@ export default merge(appConfig, {
     },
     externals: [
         nodeExternals({
-            allowlist: [/\.(css|less|s[ac]ss)$/, /\.(vue)$/, /\.(html)$/, /^webpack\/container\/reference\//],
+            allowlist: [/\.(css|less|s[ac]ss|styl(us)?)$/, /\.(vue)$/, /\.(html)$/, /^webpack\/container\/reference\//],
         }),
     ],
     externalsPresets: {
@@ -59,7 +59,7 @@ export default merge(appConfig, {
                 ],
             },
             {
-                test: /\.(css|less|s[ac]ss)$/,
+                test: /\.(css|less|s[ac]ss|styl(us)?)$/,
                 use: 'null-loader',
             },
             {

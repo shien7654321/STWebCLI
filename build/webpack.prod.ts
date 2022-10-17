@@ -15,9 +15,7 @@ export default merge(baseConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -30,9 +28,7 @@ export default merge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -46,9 +42,7 @@ export default merge(baseConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -57,6 +51,20 @@ export default merge(baseConfig, {
                     },
                     'postcss-loader',
                     'sass-loader',
+                ],
+            },
+            {
+                test: /\.styl(us)?$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        },
+                    },
+                    'postcss-loader',
+                    'stylus-loader',
                 ],
             },
         ],

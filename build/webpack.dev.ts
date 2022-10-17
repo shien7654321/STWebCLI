@@ -85,6 +85,31 @@ export default merge(baseConfig, {
                     },
                 ],
             },
+            {
+                test: /\.styl(us)?$/,
+                use: [
+                    'vue-style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            importLoaders: 1,
+                        },
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'stylus-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [

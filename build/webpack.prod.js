@@ -15,9 +15,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -30,9 +28,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -46,9 +42,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -57,7 +51,20 @@ module.exports = merge(baseConfig, {
                     },
                     'postcss-loader',
                     'sass-loader',
-                    'css-unicode-loader',
+                ],
+            },
+            {
+                test: /\.styl(us)?$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        },
+                    },
+                    'postcss-loader',
+                    'stylus-loader',
                 ],
             },
         ],

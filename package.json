@@ -8,7 +8,7 @@
         "preview": "vite preview --config build/vite.config.ts",
         "dev": "vite --config build/vite.config.ts",
         "lint": "eslint --fix \"src/**/*.{vue,js,ts,jsx,tsx}\"",
-        "lint-style": "stylelint --fix \"src/**/*.{html,vue,css,less,sass,scss,styl,jsx,tsx}\"",
+        "lint-style": "stylelint --fix \"src/**/*.{html,vue,css,less,sass,scss,styl,stylus,jsx,tsx}\"",
         "prettier": "prettier --write \"src\""
     },
     "browserslist": [

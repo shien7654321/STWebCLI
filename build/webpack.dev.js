@@ -7,10 +7,8 @@ module.exports = merge(baseConfig, {
     optimization: {
         moduleIds: 'named',
         chunkIds: 'named',
-        mangleExports: 'deterministic',
-        runtimeChunk: 'single',
     },
-    devtool: 'cheap-module-source-map',
+    devtool: 'eval-cheap-module-source-map',
     cache: {
         type: 'filesystem',
     },

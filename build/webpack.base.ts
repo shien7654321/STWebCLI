@@ -30,17 +30,11 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
             new CssMinimizerPlugin(),
             new TerserPlugin({
                 minify: TerserPlugin.uglifyJsMinify,
-                terserOptions: {
-                    compress: {
-                        drop_console: false,
-                    },
-                },
                 extractComments: false,
             }),
         ],
     },
     stats: {
-        children: true,
         errorDetails: true,
     },
     performance: {

@@ -22,7 +22,6 @@ module.exports = merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {
@@ -41,7 +40,6 @@ module.exports = merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {
@@ -66,7 +64,6 @@ module.exports = merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {
@@ -90,7 +87,6 @@ module.exports = merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {

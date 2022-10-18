@@ -22,7 +22,6 @@ export default merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {
@@ -41,7 +40,6 @@ export default merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {
@@ -66,7 +64,6 @@ export default merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {
@@ -91,7 +88,6 @@ export default merge(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1,
                         },
                     },
                     {

@@ -22,11 +22,6 @@ export default merge(appConfig, {
             new CssMinimizerPlugin(),
             new TerserPlugin({
                 minify: TerserPlugin.uglifyJsMinify,
-                terserOptions: {
-                    compress: {
-                        drop_console: false,
-                    },
-                },
                 extractComments: false,
             }),
         ],

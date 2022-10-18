@@ -20,7 +20,6 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
         },
     },
     stats: {
-        children: true,
         errorDetails: true,
     },
     module: {

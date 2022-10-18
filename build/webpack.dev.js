@@ -18,89 +18,34 @@ module.exports = merge(baseConfig, {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
+                    'css-loader',
+                    'postcss-loader',
                 ],
             },
             {
                 test: /\.less$/,
                 use: [
                     'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'less-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
+                    'css-loader',
+                    'postcss-loader',
+                    'less-loader',
                 ],
             },
             {
                 test: /\.s[ac]ss$/,
                 use: [
                     'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
                 ],
             },            {
                 test: /\.styl(us)?$/,
                 use: [
                     'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'stylus-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
+                    'css-loader',
+                    'postcss-loader',
+                    'stylus-loader',
                 ],
             },
         ],

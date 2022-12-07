@@ -68,20 +68,18 @@ function ask(template) {
                 promptParam[templateProp] = template[templateProp];
             }
         }
-        inquirer
-            .prompt([promptParam])
-            .then(async res => {
-                const result = res[promptParam.name];
-                const selectResult = template.result[String(result)];
-                if (typeof selectResult.name === 'string' && typeof selectResult.url === 'string') {
-                    resolve1(selectResult.name);
-                } else if (selectResult.type) {
-                    const templateName = await ask(selectResult);
-                    resolve1(templateName);
-                } else {
-                    resolve1();
-                }
-            });
+        inquirer.prompt([promptParam]).then(async res => {
+            const result = res[promptParam.name];
+            const selectResult = template.result[String(result)];
+            if (typeof selectResult.name === 'string' && typeof selectResult.url === 'string') {
+                resolve1(selectResult.name);
+            } else if (selectResult.type) {
+                const templateName = await ask(selectResult);
+                resolve1(templateName);
+            } else {
+                resolve1();
+            }
+        });
     });
 }
 
@@ -106,7 +104,7 @@ function getTemplateInfo() {
             const value = target[key];
             if (key === 'name' && typeof value === 'string' && keys.includes('url') && typeof target.url === 'string') {
                 templateInfo[value] = target.url;
-            } else if (typeof value === "object" && !Array.isArray(value)) {
+            } else if (typeof value === 'object' && !Array.isArray(value)) {
                 findTemplate(value);
             }
         }

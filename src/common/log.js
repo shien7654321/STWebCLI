@@ -5,7 +5,7 @@ const success = chalk.green;
 
 module.exports = function (logType, message, ...rest) {
     let prefix = '';
-    const restMessage = rest.map((i) => (typeof i === 'string' ? i : JSON.stringify(i, null, 2))).join(' ');
+    const restMessage = rest.map(i => (typeof i === 'string' ? i : JSON.stringify(i, null, 2))).join(' ');
     switch (logType) {
         case 'warn': {
             console.log(warning(message), warning(restMessage));

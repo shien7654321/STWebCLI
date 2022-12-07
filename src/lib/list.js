@@ -8,7 +8,7 @@ module.exports = async function (options = {}, context = process.cwd()) {
             const value = target[key];
             if (key === 'name' && typeof value === 'string') {
                 templateNames.push(value);
-            } else if (typeof value === "object" && !Array.isArray(value)) {
+            } else if (typeof value === 'object' && !Array.isArray(value)) {
                 findTemplateName(value);
             }
         }

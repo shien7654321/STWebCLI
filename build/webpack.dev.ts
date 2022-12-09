@@ -17,7 +17,7 @@ export default merge(baseConfig, {
             {
                 test: /\.css$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'postcss-loader',
                 ],
@@ -25,7 +25,7 @@ export default merge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'postcss-loader',
                     'less-loader',
@@ -34,7 +34,7 @@ export default merge(baseConfig, {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'postcss-loader',
                     'sass-loader',
@@ -43,7 +43,7 @@ export default merge(baseConfig, {
             {
                 test: /\.styl(us)?$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'postcss-loader',
                     'stylus-loader',
@@ -53,7 +53,6 @@ export default merge(baseConfig, {
     },
     plugins: [
         new webpack.DefinePlugin({
-            __VUE_PROD_DEVTOOLS__: true,
             ENV: JSON.stringify('development'),
         }),
     ],

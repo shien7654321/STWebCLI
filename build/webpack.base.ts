@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import { VueLoaderPlugin } from 'vue-loader';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
@@ -19,7 +18,7 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
         filename: 'js/[name].[chunkhash:8].client.js',
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.vue', '.json'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
         alias: {
             '@': resolve('src'),
             process: 'process/browser',
@@ -44,24 +43,8 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
     module: {
         rules: [
             {
-                test: /\.vue$/,
-                use: [
-                    {
-                        loader: 'vue-loader',
-                        options: {
-                            transformAssetUrls: {
-                                video: ['src', 'poster'],
-                                source: 'src',
-                                img: 'src',
-                                image: 'xlink:href',
-                            },
-                        },
-                    },
-                ],
-            },
-            {
                 test: /\.(jsx?|babel|es6)$/,
-                exclude: file => file.includes('node_modules') && !file.includes('.vue.js'),
+                exclude: file => file.includes('node_modules'),
                 use: [
                     {
                         loader: 'babel-loader',
@@ -85,7 +68,6 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
                         loader: 'ts-loader',
                         options: {
                             transpileOnly: true,
-                            appendTsxSuffixTo: ['\\.vue$'],
                         },
                     },
                 ],
@@ -122,14 +104,16 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
                     },
                 },
             },
+            {
+                test: /\.tpl.html$/,
+                loader: 'html-loader',
+            },
         ],
     },
     plugins: [
         new webpack.DefinePlugin({
-            __VUE_OPTIONS_API__: true,
             'process.env': JSON.stringify(process.env),
         }),
-        new VueLoaderPlugin(),
         new HtmlPlugin({
             template: './index.html',
             filename: 'index.html',

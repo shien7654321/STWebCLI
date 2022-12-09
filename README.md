@@ -2,7 +2,7 @@
 
 Web CLI template in the specified branch.
 
-## Vue 3 Project With Webpack
+## San Project With Webpack
 
 ```bash
 # install dependencies

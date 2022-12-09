@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ['stylelint-config-standard', 'stylelint-stylus/standard', 'stylelint-config-recommended-vue'],
+    extends: ['stylelint-config-standard', 'stylelint-stylus/standard'],
     overrides: [
         {
             files: '**/*.less',

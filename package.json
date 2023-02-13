@@ -22,16 +22,16 @@
     },
     "dependencies": {
         "chalk": "4.1.2",
-        "commander": "^9.4.1",
+        "commander": "^10.0.0",
         "download-git-repo": "^3.0.2",
         "inquirer": "8.2.4",
         "ora": "5.4.1",
-        "rimraf": "^3.0.2",
+        "rimraf": "^4.1.2",
         "shelljs": "^0.8.5",
         "update-notifier": "5.1.0"
     },
     "devDependencies": {
-        "prettier": "^2.8.1"
+        "prettier": "^2.8.4"
     },
     "bin": {
         "st-web-cli": "src/bin/index.js"

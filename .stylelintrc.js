@@ -1,10 +1,7 @@
 module.exports = {
-    extends: ['stylelint-config-standard', 'stylelint-stylus/standard', 'stylelint-config-recommended-vue'],
-    overrides: [
-        {
-            files: '**/*.less',
-            customSyntax: 'postcss-less',
-        },
+    extends: [
+        'stylelint-config-standard',
+        'stylelint-config-recommended-vue',
     ],
     rules: {
         indentation: 4,

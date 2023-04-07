@@ -30,15 +30,6 @@ module.exports = merge(baseConfig, {
                 ],
             },
             {
-                test: /\.s[ac]ss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
-                ],
-            },
-            {
                 test: /\.styl(us)?$/,
                 use: [
                     MiniCssExtractPlugin.loader,

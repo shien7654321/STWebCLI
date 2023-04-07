@@ -1,10 +1,6 @@
 module.exports = {
-    extends: ['stylelint-config-standard', 'stylelint-stylus/standard'],
-    overrides: [
-        {
-            files: '**/*.less',
-            customSyntax: 'postcss-less',
-        },
+    extends: [
+        'stylelint-config-standard',
     ],
     rules: {
         indentation: 4,

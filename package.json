@@ -26,12 +26,12 @@
         "download-git-repo": "^3.0.2",
         "inquirer": "8.2.4",
         "ora": "5.4.1",
-        "rimraf": "^4.4.0",
+        "rimraf": "^4.4.1",
         "shelljs": "^0.8.5",
         "update-notifier": "5.1.0"
     },
     "devDependencies": {
-        "prettier": "^2.8.6"
+        "prettier": "^2.8.7"
     },
     "bin": {
         "st-web-cli": "src/bin/index.js"

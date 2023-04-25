@@ -44,7 +44,7 @@ const config: webpack.Configuration | webpack.WebpackOptionsNormalized = {
         rules: [
             {
                 test: /\.(jsx?|babel|es6)$/,
-                exclude: file => file.includes('node_modules'),
+                exclude: (file) => file.includes('node_modules'),
                 use: [
                     {
                         loader: 'babel-loader',

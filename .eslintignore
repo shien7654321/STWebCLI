@@ -1,5 +1,3 @@
 node_modules/*
 dist/*
 dll/*
-build/*
-src/types/*

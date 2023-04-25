@@ -3,7 +3,7 @@
         "type": "list",
         "message": "please select your UI framework",
         "props": ["choices"],
-        "choices": ["vue3", "vue2", "san"],
+        "choices": ["vue3", "vue2", "react", "san"],
         "result": {
             "vue3": {
                 "type": "list",
@@ -36,6 +36,10 @@
             "vue2": {
                 "name": "vue2-webpack",
                 "url": "github:shien7654321/STWebCLI#tpl-vue2-webpack"
+            },
+            "react": {
+                "name": "react-webpack",
+                "url": "github:shien7654321/STWebCLI#tpl-react-webpack"
             },
             "san": {
                 "name": "san-webpack",

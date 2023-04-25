@@ -40,7 +40,7 @@ export default merge(appConfig, {
         rules: [
             {
                 test: /\.(m?jsx?|babel|es6)$/,
-                exclude: file => file.includes('node_modules') && !file.includes('.vue.js'),
+                exclude: (file) => file.includes('node_modules') && !file.includes('.vue.js'),
                 use: [
                     {
                         loader: 'babel-loader',
@@ -91,7 +91,7 @@ export default merge(appConfig, {
             publicPath: '',
         }),
         new webpack.optimize.LimitChunkCountPlugin({
-            maxChunks: 1
+            maxChunks: 1,
         }),
     ],
 });

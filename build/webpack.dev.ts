@@ -16,38 +16,19 @@ export default merge(baseConfig, {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                ],
+                use: ['vue-style-loader', 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.less$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader',
-                ],
+                use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
             },
             {
                 test: /\.s[ac]ss$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
-                ],
+                use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
             },
             {
                 test: /\.styl(us)?$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'stylus-loader',
-                ],
+                use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'],
             },
         ],
     },

@@ -32,20 +32,18 @@ export default defineConfig(({ command, mode }) => {
             assetsDir: 'static',
             chunkSizeWarningLimit: 1.5 * 1024,
         },
-        plugins: [
-            VuePlugin(),
-            VueJsxPlugin(),
-            LegacyPlugin(),
-        ],
+        plugins: [VuePlugin(), VueJsxPlugin(), LegacyPlugin()],
         server: {
             cors: true,
             open: true,
         },
     };
     if (command === 'build') {
-        config.plugins?.push(CompressionPlugin({
-            threshold: 10240,
-        }));
+        config.plugins?.push(
+            CompressionPlugin({
+                threshold: 10240,
+            })
+        );
     }
     config.build!.sourcemap = command === 'serve';
     return config;

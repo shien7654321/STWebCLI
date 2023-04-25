@@ -2,9 +2,7 @@ module.exports = {
     root: true,
     extends: ['eslint:recommended', 'plugin:san/essential', 'airbnb-base'],
     plugins: ['@typescript-eslint'],
-    parserOptions: {
-        parser: '@typescript-eslint/parser',
-    },
+    parser: '@typescript-eslint/parser',
     rules: {
         indent: ['error', 4, { SwitchCase: 1 }],
         'import/extensions': 'off',

@@ -4,7 +4,7 @@
         "module": "esnext",
         "strict": true,
         "downlevelIteration": true,
-        "jsx": "preserve",
+        "jsx": "react-jsx",
         "importHelpers": true,
         "allowJs": true,
         "moduleResolution": "node",

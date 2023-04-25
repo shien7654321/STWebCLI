@@ -8,6 +8,6 @@ module.exports = {
                 },
             },
         ],
+        '@babel/preset-react',
     ],
-    plugins: ['@vue/babel-plugin-jsx'],
 };

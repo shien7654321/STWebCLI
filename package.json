@@ -22,7 +22,7 @@
         "chalk": "^5.2.0",
         "commander": "9.5.0",
         "download-git-repo": "^3.0.2",
-        "inquirer": "8.2.3",
+        "inquirer": "8.2.5",
         "ora": "5.4.1",
         "rimraf": "3.0.2",
         "shelljs": "^0.8.5",

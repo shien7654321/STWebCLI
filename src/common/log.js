@@ -1,10 +1,10 @@
-const chalk = require('chalk');
+import chalk from 'chalk';
+
 const error = chalk.red;
 const warning = chalk.yellow;
 const success = chalk.green;
 
-module.exports = function (logType, message, ...rest) {
-    let prefix = '';
+export default function (logType, message, ...rest) {
     const restMessage = rest.map(i => (typeof i === 'string' ? i : JSON.stringify(i, null, 2))).join(' ');
     switch (logType) {
         case 'warn': {

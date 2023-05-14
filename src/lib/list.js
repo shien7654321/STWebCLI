@@ -1,8 +1,11 @@
-const log = require('../common/log');
-const tpl = require('../common/config.json').template;
+import log from '../common/log.js';
+import fs from 'fs';
 
-module.exports = async function (options = {}, context = process.cwd()) {
+const {template: tpl} = JSON.parse(fs.readFileSync((new URL('../common/config.json', import.meta.url)).pathname, 'utf8'));
+
+export default async function (options = {}, context = process.cwd()) {
     const templateNames = [];
+
     function findTemplateName(target) {
         for (const key of Object.keys(target)) {
             const value = target[key];
@@ -13,6 +16,7 @@ module.exports = async function (options = {}, context = process.cwd()) {
             }
         }
     }
+
     findTemplateName(tpl);
     const templateNameQuery = options.query;
     let filteredTemplateNames = templateNames;

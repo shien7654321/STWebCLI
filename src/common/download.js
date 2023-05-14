@@ -1,21 +1,21 @@
-const downloadGitRepo = require('download-git-repo');
-const path = require('path');
-const rimraf = require('rimraf');
-const log = require('./log');
+import downloadGitRepo from 'download-git-repo';
+import path from 'path';
+import {rimraf} from 'rimraf';
+import log from './log.js';
 
-module.exports = async function (url, name, target = process.cwd()) {
+export default async function (url, name, target = process.cwd()) {
     return new Promise(resolve => {
         const dir = path.join(target, name);
         rimraf.sync(dir, {});
 
         function downLoadCallback(err) {
             if (err) {
-                resolve({ flag: false, dir, name });
+                resolve({flag: false, dir, name});
                 log('error', err);
             }
-            resolve({ flag: true, dir, name });
+            resolve({flag: true, dir, name});
         }
 
-        downloadGitRepo(url, dir, { clone: true }, downLoadCallback);
+        downloadGitRepo(url, dir, {clone: true}, downLoadCallback);
     });
 };

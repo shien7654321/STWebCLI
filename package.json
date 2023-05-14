@@ -1,11 +1,9 @@
 {
     "name": "st-web-cli",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "A web project CLI.",
     "main": "src/bin/index.js",
-    "scripts": {
-        "prettier": "prettier --write \"**\""
-    },
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/shien7654321/STWebCLI.git"
@@ -21,17 +19,14 @@
         "npm": ">= 6.0.0"
     },
     "dependencies": {
-        "chalk": "4.1.2",
+        "chalk": "5.2.0",
         "commander": "^10.0.1",
         "download-git-repo": "^3.0.2",
-        "inquirer": "8.2.4",
-        "ora": "5.4.1",
+        "inquirer": "9.2.3",
+        "ora": "6.3.0",
         "rimraf": "^5.0.0",
         "shelljs": "^0.8.5",
-        "update-notifier": "5.1.0"
-    },
-    "devDependencies": {
-        "prettier": "^2.8.8"
+        "update-notifier": "6.0.2"
     },
     "bin": {
         "st-web-cli": "src/bin/index.js"

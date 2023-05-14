@@ -1,29 +1,36 @@
 #!/usr/bin/env node
-const program = require('commander');
+import {program} from 'commander';
+import fs from 'fs';
+import init from '../lib/init.js';
+import list from '../lib/list.js';
+import update from '../lib/update.js';
+import upgrade from '../lib/upgrade.js';
 
-program.version(require('../../package.json').version, '-v, --version');
+const {version} = JSON.parse(fs.readFileSync((new URL('../../package.json', import.meta.url)).pathname, 'utf8'));
+
+program.version(version, '-v, --version');
 
 program
     .command('init <project-name>')
     .description('initialize a project')
     .option('-t, --template <template>', 'template name')
-    .action((name, options) => require('../lib/init')(name, options));
+    .action((name, options) => init(name, options));
 
 program
     .command('list')
     .description('list all templates')
     .option('-q, --query <query>', 'template name to query')
-    .action(options => require('../lib/list')(options));
+    .action(options => list(options));
 
 program
     .command('update')
     .description('update template config')
-    .action(() => require('../lib/update')());
+    .action(() => update());
 
 program
     .command('upgrade')
     .description('check if there is a new version')
-    .action(() => require('../lib/upgrade')());
+    .action(() => upgrade());
 
 program.on('command:*', function () {
     console.log('Invalid command: %s\nSee --help for a list of available commands.', program.args.join(' '));

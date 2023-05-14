@@ -2,19 +2,33 @@
     "template": {
         "type": "list",
         "message": "please select your UI framework",
-        "props": ["choices"],
-        "choices": ["vue3", "vue2", "react", "san"],
+        "props": [
+            "choices"
+        ],
+        "choices": [
+            "vue3",
+            "vue2",
+            "react",
+            "san"
+        ],
         "result": {
             "vue3": {
                 "type": "list",
                 "message": "please select your packaging tool",
-                "props": ["choices"],
-                "choices": ["webpack", "vite"],
+                "props": [
+                    "choices"
+                ],
+                "choices": [
+                    "webpack",
+                    "vite"
+                ],
                 "result": {
                     "webpack": {
                         "type": "confirm",
                         "message": "do you want to support SSR",
-                        "props": ["default"],
+                        "props": [
+                            "default"
+                        ],
                         "default": false,
                         "result": {
                             "false": {

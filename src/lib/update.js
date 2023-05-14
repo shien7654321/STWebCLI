@@ -1,22 +1,22 @@
-const https = require('https');
-const path = require('path');
-const fs = require('fs');
-const ora = require('ora');
-const log = require('../common/log');
+import https from 'https';
+import fs from 'fs';
+import ora from 'ora';
+import log from '../common/log.js';
 
 const CONFIG_URL = 'https://raw.githubusercontent.com/shien7654321/STWebCLI/main/src/common/config.json';
 
-module.exports = function () {
+export default function () {
     const spinner = ora({
         text: 'Start update config...',
         color: 'blue',
     }).start();
     return new Promise(resolve => {
-        const filePath = path.join(__dirname, '../common/config.json');
+        const filePath = (new URL('../common/config.json', import.meta.url)).pathname;
         let file = null;
 
         function errCallback(err) {
-            file && fs.unlink(filePath, () => {});
+            file && fs.unlink(filePath, () => {
+            });
             spinner.fail('update fail');
             err && log('error', err);
         }

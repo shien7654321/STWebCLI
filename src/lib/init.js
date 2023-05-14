@@ -1,11 +1,12 @@
-const log = require('../common/log');
-const inquirer = require('inquirer');
-const fs = require('fs');
-const ora = require('ora');
-const shelljs = require('shelljs');
-const crypto = require('crypto');
-const download = require('../common/download');
-const tpl = require('../common/config.json').template;
+import log from '../common/log.js';
+import inquirer from 'inquirer';
+import fs from 'fs';
+import ora from 'ora';
+import shelljs from 'shelljs';
+import crypto from 'crypto';
+import download from '../common/download.js';
+
+const {template: tpl} = JSON.parse(fs.readFileSync((new URL('../common/config.json', import.meta.url)).pathname, 'utf8'));
 
 async function init(projectName, options = {}, context = process.cwd()) {
     let templateName = options.template;
@@ -16,12 +17,12 @@ async function init(projectName, options = {}, context = process.cwd()) {
     if (!templateUrl) {
         return log('error', 'no such template');
     }
-    const packageInfo = { name: projectName, version: '1.0.0' };
+    const packageInfo = {name: projectName, version: '1.0.0'};
     const downloadSpinner = ora({
         text: 'start download template...',
         color: 'blue',
     }).start();
-    const { dir, flag } = await download(templateUrl, projectName, context);
+    const {dir, flag} = await download(templateUrl, projectName, context);
     if (flag) {
         downloadSpinner.succeed('download template success');
         const configSpinner = ora({
@@ -90,7 +91,7 @@ async function configPackageInfo(dir, packageInfo) {
             if (err) {
                 return resolve(false);
             }
-            const newPackageInfo = { ...JSON.parse(data), ...packageInfo };
+            const newPackageInfo = {...JSON.parse(data), ...packageInfo};
             fs.writeFile(filePath, JSON.stringify(newPackageInfo, null, 4), 'utf8', err => resolve(!Boolean(err)));
         });
     });
@@ -98,6 +99,7 @@ async function configPackageInfo(dir, packageInfo) {
 
 function getTemplateInfo() {
     const templateInfo = {};
+
     function findTemplate(target) {
         const keys = Object.keys(target);
         for (const key of keys) {
@@ -109,8 +111,9 @@ function getTemplateInfo() {
             }
         }
     }
+
     findTemplate(tpl);
     return templateInfo;
 }
 
-module.exports = init;
+export default init;

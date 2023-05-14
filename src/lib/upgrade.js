@@ -1,14 +1,16 @@
-const updateNotifier = require('update-notifier');
-const chalk = require('chalk');
-const log = require('../common/log');
-const pkg = require('../../package.json');
+import updateNotifier from 'update-notifier';
+import chalk from 'chalk';
+import log from '../common/log.js';
+import fs from 'fs';
+
+const pkg = JSON.parse(fs.readFileSync((new URL('../../package.json', import.meta.url)).pathname, 'utf8'));
 
 const notifier = updateNotifier({
     pkg,
     updateCheckInterval: 1000,
 });
 
-module.exports = function () {
+export default function () {
     if (notifier.update) {
         log('info', `new version available: ${chalk.cyan(notifier.update.latest)}`);
         notifier.notify();

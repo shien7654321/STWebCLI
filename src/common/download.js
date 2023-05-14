@@ -1,6 +1,6 @@
 import downloadGitRepo from 'download-git-repo';
 import path from 'path';
-import {rimraf} from 'rimraf';
+import rimraf from 'rimraf';
 import log from './log.js';
 
 export default async function (url, name, target = process.cwd()) {

@@ -1,63 +1,80 @@
 {
     "template": {
         "type": "list",
-        "message": "please select your UI framework",
+        "message": "please select your platform",
         "props": [
             "choices"
         ],
         "choices": [
-            "vue3",
-            "vue2",
-            "react",
-            "san"
+            "browser",
+            "node"
         ],
         "result": {
-            "vue3": {
+            "browser": {
                 "type": "list",
-                "message": "please select your packaging tool",
+                "message": "please select your UI framework",
                 "props": [
                     "choices"
                 ],
                 "choices": [
-                    "webpack",
-                    "vite"
+                    "vue3",
+                    "vue2",
+                    "react",
+                    "san"
                 ],
                 "result": {
-                    "webpack": {
-                        "type": "confirm",
-                        "message": "do you want to support SSR",
+                    "vue3": {
+                        "type": "list",
+                        "message": "please select your packaging tool",
                         "props": [
-                            "default"
+                            "choices"
                         ],
-                        "default": false,
+                        "choices": [
+                            "webpack",
+                            "vite"
+                        ],
                         "result": {
-                            "false": {
-                                "name": "vue3-webpack",
-                                "url": "github:shien7654321/STWebCLI#tpl-vue3-webpack"
+                            "webpack": {
+                                "type": "confirm",
+                                "message": "do you want to support SSR",
+                                "props": [
+                                    "default"
+                                ],
+                                "default": false,
+                                "result": {
+                                    "false": {
+                                        "name": "vue3-webpack",
+                                        "url": "github:shien7654321/STWebCLI#tpl-vue3-webpack"
+                                    },
+                                    "true": {
+                                        "name": "vue3-webpack-ssr",
+                                        "url": "github:shien7654321/STWebCLI#tpl-vue3-webpack-ssr"
+                                    }
+                                }
                             },
-                            "true": {
-                                "name": "vue3-webpack-ssr",
-                                "url": "github:shien7654321/STWebCLI#tpl-vue3-webpack-ssr"
+                            "vite": {
+                                "name": "vue3-vite",
+                                "url": "github:shien7654321/STWebCLI#tpl-vue3-vite"
                             }
                         }
                     },
-                    "vite": {
-                        "name": "vue3-vite",
-                        "url": "github:shien7654321/STWebCLI#tpl-vue3-vite"
+                    "vue2": {
+                        "name": "vue2-webpack",
+                        "url": "github:shien7654321/STWebCLI#tpl-vue2-webpack"
+                    },
+                    "react": {
+                        "name": "react-webpack",
+                        "url": "github:shien7654321/STWebCLI#tpl-react-webpack"
+                    },
+                    "san": {
+                        "name": "san-webpack",
+                        "url": "github:shien7654321/STWebCLI#tpl-san-webpack"
                     }
                 }
             },
-            "vue2": {
-                "name": "vue2-webpack",
-                "url": "github:shien7654321/STWebCLI#tpl-vue2-webpack"
-            },
-            "react": {
-                "name": "react-webpack",
-                "url": "github:shien7654321/STWebCLI#tpl-react-webpack"
-            },
-            "san": {
-                "name": "san-webpack",
-                "url": "github:shien7654321/STWebCLI#tpl-san-webpack"
+            "node": {
+                "name": "node",
+                "url": "github:shien7654321/STWebCLI#tpl-node"
             }
         }
     }

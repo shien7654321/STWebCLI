@@ -18,6 +18,11 @@ async function init(projectName, options = {}, context = process.cwd()) {
         return log('error', 'no such template');
     }
     const packageInfo = {name: projectName, version: '1.0.0'};
+    if (templateName === 'node') {
+        packageInfo.bin = {
+            [projectName]: 'dist/bin/index.js',
+        };
+    }
     const downloadSpinner = ora({
         text: 'start download template...',
         color: 'blue',

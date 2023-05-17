@@ -1,3 +1,2 @@
-import log from '../base/log.js';
-
-log.info('Node Project');
+#!/usr/bin/env node
+import '../app.js';

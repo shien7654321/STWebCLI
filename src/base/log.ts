@@ -10,7 +10,7 @@ interface IStackInfo {
 }
 
 function getStackInfo(stackIndex: number): IStackInfo | undefined {
-    const stackList: string[] = (new Error()).stack?.split('\n').slice(3) || [];
+    const stackList: string[] = new Error().stack?.split('\n').slice(3) || [];
     const stackReg: RegExp = /at\s+(.*)\s+\((.*):(\d*):(\d*)\)/gi;
     const stackReg2: RegExp = /at\s+(.*):(\d*):(\d*)/gi;
     const stack: string = stackList[stackIndex] || stackList[0];
@@ -64,9 +64,7 @@ const logger = winston.createLogger({
         winston.format.colorize(),
         winston.format.printf((info) => `${info.level} ${info.timestamp} ${info.message}`),
     ),
-    transports: [
-        new winston.transports.Console(),
-    ],
+    transports: [new winston.transports.Console()],
 });
 
 const log = {

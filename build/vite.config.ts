@@ -37,6 +37,10 @@ export default defineConfig(({ command, mode }) => {
             cors: true,
             open: true,
         },
+        preview: {
+            cors: true,
+            open: true,
+        }
     };
     if (command === 'build') {
         config.plugins?.push(

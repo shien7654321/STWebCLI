@@ -2,7 +2,7 @@ module.exports = {
     extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
     overrides: [
         {
-            files: '**/*.html',
+            files: ['**/*.html', '**/*.vue'],
             customSyntax: 'postcss-html',
         },
         {

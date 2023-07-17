@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "main": "src/main.ts",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shien7654321/STWebCLI.git#tpl-vue3-webpack-ssr"
+    },
     "scripts": {
         "build": "yarn build:client && yarn build:server && yarn build:node",
         "build:client": "TS_NODE_PROJECT=\"build/webpack.tsconfig.json\" webpack --progress --config build/webpack.prod.ts",

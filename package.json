@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "main": "src/main.ts",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shien7654321/STWebCLI.git#tpl-vue3-vite"
+    },
     "scripts": {
         "build": "vite build --config build/vite.config.ts",
         "preview": "vite preview --config build/vite.config.ts",

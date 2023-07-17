@@ -4,6 +4,10 @@
     "main": "src/app.ts",
     "license": "MIT",
     "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shien7654321/STWebCLI.git#tpl-node"
+    },
     "scripts": {
         "build": "tsc",
         "dev": "cross-env NODE_ENV=development ts-node --esm src/app.ts",

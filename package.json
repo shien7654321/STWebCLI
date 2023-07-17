@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "main": "src/main.js",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shien7654321/STWebCLI.git#tpl-vue2-webpack"
+    },
     "scripts": {
         "build": "webpack --progress --config build/webpack.prod.js",
         "dev": "webpack serve --progress --config build/webpack.dev.js",

@@ -4,7 +4,12 @@ module.exports = {
         browser: true,
         node: true,
     },
-    extends: ['eslint:recommended', 'plugin:react/recommended', 'airbnb'],
+    extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'airbnb',
+    ],
     plugins: ['react', '@typescript-eslint'],
     parser: '@typescript-eslint/parser',
     rules: {

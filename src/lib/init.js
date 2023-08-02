@@ -36,19 +36,19 @@ async function init(projectName, options = {}, context = process.cwd()) {
         }).start();
         const configFlag = await configPackageInfo(dir, packageInfo);
         if (configFlag) {
-            if (shelljs.which('yarn')) {
-                configSpinner.succeed('config project success');
-                const installSpinner = ora({
-                    text: 'start install project...',
-                    color: 'blue',
-                }).start();
-                log('info', '\n');
-                shelljs.exec(`cd ${projectName} && yarn && cd ..`);
-                log('info', '\n');
-                installSpinner.succeed('create project success');
-            } else {
-                configSpinner.succeed('create project success');
-            }
+            // if (shelljs.which('yarn')) {
+            //     configSpinner.succeed('config project success');
+            //     const installSpinner = ora({
+            //         text: 'start install project...',
+            //         color: 'blue',
+            //     }).start();
+            //     log('info', '\n');
+            //     shelljs.exec(`cd ${projectName} && yarn && cd ..`);
+            //     log('info', '\n');
+            //     installSpinner.succeed('create project success');
+            // } else {
+            configSpinner.succeed('create project success');
+            // }
         } else {
             configSpinner.fail('create project fail');
         }

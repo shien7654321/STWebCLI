@@ -1,17 +1,16 @@
 module.exports = {
     root: true,
-    extends: ['eslint:recommended', 'plugin:vue/essential', 'airbnb-base'],
-    plugins: ['vue', '@typescript-eslint'],
-    parserOptions: {
-        parser: '@typescript-eslint/parser',
+    env: {
+        browser: true,
+        node: true,
     },
+    extends: ['eslint:recommended', 'plugin:react/recommended', 'airbnb'],
+    plugins: ['react', '@typescript-eslint'],
+    parser: '@typescript-eslint/parser',
     rules: {
         indent: ['error', 4, { SwitchCase: 1 }],
-        'vue/multi-word-component-names': 'off',
-        'vue/no-v-model-argument': 'off',
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
-        'vue/no-multiple-template-root': 'off',
         'no-param-reassign': [
             'error',
             {
@@ -25,5 +24,13 @@ module.exports = {
                 code: 120,
             },
         ],
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+        'react/prefer-stateless-function': 'off',
+        'react/jsx-indent': ['error', 4],
+        'react/jsx-indent-props': ['error', 4],
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-no-bind': 'off',
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+        'no-shadow': 'off',
     },
 };

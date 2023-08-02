@@ -2,7 +2,7 @@
 
 Web CLI template in the specified branch.
 
-## Vue 3 Project With Vite
+## React Project With Vite
 
 ```bash
 # install dependencies

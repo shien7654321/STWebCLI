@@ -1,9 +1,8 @@
 import { defineConfig, UserConfig } from 'vite';
 import path from 'path';
-import VuePlugin from '@vitejs/plugin-vue';
-import VueJsxPlugin from '@vitejs/plugin-vue-jsx';
 import CompressionPlugin from 'vite-plugin-compression';
 import LegacyPlugin from '@vitejs/plugin-legacy';
+import ReactPlugin from '@vitejs/plugin-react';
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -20,19 +19,19 @@ export default defineConfig(({ command, mode }) => {
         build: {
             target: 'es2015',
             rollupOptions: {
-                manualChunks: {
-                    vendor: ['vue'],
-                },
                 output: {
                     entryFileNames: 'js/[name].[hash].client.js',
                     chunkFileNames: 'js/[name].[hash].client.js',
                     assetFileNames: '[ext]/[name].[hash].[ext]',
+                    // manualChunks: {
+                    //     vendor: ['react', 'react-dom'],
+                    // },
                 },
             },
             assetsDir: 'static',
             chunkSizeWarningLimit: 1.5 * 1024,
         },
-        plugins: [VuePlugin(), VueJsxPlugin(), LegacyPlugin()],
+        plugins: [ReactPlugin(), LegacyPlugin()],
         server: {
             cors: true,
             open: true,

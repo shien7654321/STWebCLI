@@ -1,18 +1,18 @@
 {
     "name": "st-web-cli-template",
     "version": "1.0.0",
-    "main": "src/main.ts",
+    "main": "src/main.tsx",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/shien7654321/STWebCLI.git#tpl-vue3-vite"
+        "url": "git+https://github.com/shien7654321/STWebCLI.git#tpl-react-vite"
     },
     "scripts": {
         "build": "vite build --config build/vite.config.ts",
         "preview": "vite preview --config build/vite.config.ts",
         "dev": "vite --config build/vite.config.ts",
-        "lint": "eslint --fix \"src/**/*.{vue,js,ts,jsx,tsx}\"",
-        "lint-style": "stylelint --fix \"src/**/*.{html,vue,css,less,sass,scss,styl,stylus,jsx,tsx}\"",
+        "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\"",
+        "lint-style": "stylelint --fix \"src/**/*.{html,css,less,sass,scss,styl,stylus}\"",
         "prettier": "prettier --write \"src\""
     },
     "browserslist": [
@@ -25,20 +25,24 @@
         "npm": ">= 6.0.0"
     },
     "dependencies": {
-        "vue": "^3.3.4"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
+        "@types/react": "^18.2.18",
+        "@types/react-dom": "^18.2.7",
         "@typescript-eslint/eslint-plugin": "5.62.0",
         "@typescript-eslint/parser": "5.62.0",
         "@vitejs/plugin-legacy": "^4.1.1",
-        "@vitejs/plugin-vue": "^4.2.3",
-        "@vitejs/plugin-vue-jsx": "^3.0.1",
+        "@vitejs/plugin-react": "^4.0.4",
         "autoprefixer": "^10.4.14",
         "eslint": "^8.46.0",
-        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb": "^19.0.4",
         "eslint-plugin-import": "^2.28.0",
-        "eslint-plugin-vue": "^9.16.1",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-react": "^7.33.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
         "less": "^4.1.3",
         "postcss": "^8.4.27",
         "postcss-html": "^1.5.0",
@@ -50,7 +54,6 @@
         "sass": "^1.64.2",
         "stylelint": "^15.10.2",
         "stylelint-config-recess-order": "^4.3.0",
-        "stylelint-config-recommended-vue": "^1.5.0",
         "stylelint-config-standard": "^34.0.0",
         "stylus": "^0.59.0",
         "terser": "^5.19.2",

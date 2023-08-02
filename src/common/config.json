@@ -63,8 +63,25 @@
                         "url": "github:shien7654321/STWebCLI#tpl-vue2-webpack"
                     },
                     "react": {
-                        "name": "react-webpack",
-                        "url": "github:shien7654321/STWebCLI#tpl-react-webpack"
+                        "type": "list",
+                        "message": "please select your packaging tool",
+                        "props": [
+                            "choices"
+                        ],
+                        "choices": [
+                            "webpack",
+                            "vite"
+                        ],
+                        "result": {
+                            "webpack": {
+                                "name": "react-webpack",
+                                "url": "github:shien7654321/STWebCLI#tpl-react-webpack"
+                            },
+                            "vite": {
+                                "name": "react-vite",
+                                "url": "github:shien7654321/STWebCLI#tpl-react-vite"
+                            }
+                        }
                     },
                     "san": {
                         "name": "san-webpack",

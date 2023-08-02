@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from '@vue/server-renderer';
 import main from './main';
 

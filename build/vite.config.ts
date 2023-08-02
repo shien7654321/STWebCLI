@@ -20,13 +20,13 @@ export default defineConfig(({ command, mode }) => {
         build: {
             target: 'es2015',
             rollupOptions: {
-                manualChunks: {
-                    vendor: ['vue'],
-                },
                 output: {
                     entryFileNames: 'js/[name].[hash].client.js',
                     chunkFileNames: 'js/[name].[hash].client.js',
                     assetFileNames: '[ext]/[name].[hash].[ext]',
+                    manualChunks: {
+                        vendor: ['vue'],
+                    },
                 },
             },
             assetsDir: 'static',

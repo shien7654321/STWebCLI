@@ -28,5 +28,9 @@ module.exports = {
         'react/prefer-stateless-function': 'off',
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-no-bind': 'off',
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+        'no-shadow': 'off',
     },
 };

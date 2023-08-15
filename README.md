@@ -6,25 +6,25 @@ Web CLI template in the specified branch.
 
 ```bash
 # install dependencies
-yarn
+npm run
 
 # build for production with minification
-yarn build
+npm run build
 
 # preview for production
-yarn preview
+npm run preview
 
 # serve with hot reload at localhost
-yarn dev
+npm run dev
 
 # code inspection
-yarn lint
+npm run lint
 
 # style code inspection
-yarn lint-style
+npm run lint-style
 
 # code formatter
-yarn prettier
+npm run prettier
 ```
 
 ## Author

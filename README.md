@@ -6,37 +6,37 @@ Web CLI template in the specified branch.
 
 ```bash
 # install dependencies
-yarn
+npm run
 
 # build client, server and node
-yarn build
+npm run build
 
 # build for client
-yarn build:client
+npm run build:client
 
 # build for server
-yarn build:server
+npm run build:server
 
 # build for node server
-yarn build:node
+npm run build:node
 
 # run ssr on node server, you need to run build before this
-yarn ssr
+npm run ssr
 
 # serve with hot reload at localhost
-yarn dev
+npm run dev
 
 # serve on ssr with hot reload at localhost
-yarn dev:ssr
+npm run dev:ssr
 
 # code inspection
-yarn lint
+npm run lint
 
 # style code inspection
-yarn lint-style
+npm run lint-style
 
 # code formatter
-yarn prettier
+npm run prettier
 ```
 
 ## Author

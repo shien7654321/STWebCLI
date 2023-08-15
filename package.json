@@ -22,11 +22,11 @@
         "winston": "^3.10.0"
     },
     "devDependencies": {
-        "@types/node": "^20.4.9",
+        "@types/node": "^20.5.0",
         "@typescript-eslint/eslint-plugin": "5.62.0",
         "@typescript-eslint/parser": "5.62.0",
         "cross-env": "^7.0.3",
-        "eslint": "^8.46.0",
+        "eslint": "^8.47.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.28.0",
         "prettier": "^3.0.1",

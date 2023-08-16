@@ -38,7 +38,11 @@ function formatLogArguments(...args): any {
         let msg = '';
         newArgs.forEach((newArg) => {
             if (newArg instanceof Object) {
-                msg += ` ${JSON.stringify(newArg)}`;
+                try {
+                    msg += ` ${JSON.stringify(newArg)}`;
+                } catch (err) {
+                    msg += ` ${newArg}`;
+                }
             } else {
                 msg += ` ${newArg}`;
             }

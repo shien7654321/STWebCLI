@@ -1,7 +1,7 @@
 {
     "name": "st-web-cli-template",
     "version": "1.0.0",
-    "main": "src/app.ts",
+    "main": "dist/bin/index.js",
     "license": "MIT",
     "type": "module",
     "repository": {
@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "dev": "cross-env NODE_ENV=development ts-node --esm src/app.ts",
+        "dev": "cross-env NODE_ENV=development node --no-warnings=ExperimentalWarning --loader ts-node/esm src/app.ts",
         "lint": "eslint --fix \"src/**/*.{js,ts}\"",
         "prettier": "prettier --write \"src\""
     },

@@ -25,5 +25,7 @@ module.exports = {
                 code: 120,
             },
         ],
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'warn',
     },
 };

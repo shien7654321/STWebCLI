@@ -24,7 +24,7 @@ module.exports = {
             },
         ],
         '@typescript-eslint/ban-ts-comment': 'off',
-        "no-shadow": "off",
-        "@typescript-eslint/no-shadow": "warn",
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'warn',
     },
 };

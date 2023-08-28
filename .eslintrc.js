@@ -37,5 +37,6 @@ module.exports = {
         'react/jsx-no-bind': 'off',
         '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
         'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'warn',
     },
 };

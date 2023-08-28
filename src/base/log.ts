@@ -34,7 +34,14 @@ function getStackInfo(stackIndex: number): IStackInfo | undefined {
 function formatLogArguments(...args): any {
     let newArgs: any[] = [...args];
     const assembleHandler = (stackInfo?: IStackInfo) => {
-        const stackPrefix = stackInfo ? `${stackInfo.path}:${stackInfo.line}:${stackInfo.pos} >` : '>';
+        let stackPrefix = '>';
+        if (stackInfo) {
+            let { path: stackInfoPath } = stackInfo;
+            if (stackInfoPath.startsWith('/')) {
+                stackInfoPath = `file://${stackInfoPath}`;
+            }
+            stackPrefix = `${stackInfoPath}:${stackInfo.line}:${stackInfo.pos} >`;
+        }
         let msg = '';
         newArgs.forEach((newArg) => {
             if (newArg instanceof Object) {

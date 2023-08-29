@@ -6,7 +6,7 @@ Web CLI template in the specified branch.
 
 ```bash
 # install dependencies
-npm run
+npm install
 
 # build for production with minification
 npm run build

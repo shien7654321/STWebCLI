@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "ES2015",
-        "module": "esnext",
+        "module": "CommonJS",
         "strict": true,
         "downlevelIteration": true,
         "jsx": "preserve",
@@ -14,10 +14,14 @@
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
         "baseUrl": ".",
-        "outDir": "./dist",
+        "rootDir": ".",
+        "outDir": "dist",
         "types": ["node"],
         "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "paths": {
+            "@/*": ["src/*"]
+        }
     },
     "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", "dist"]

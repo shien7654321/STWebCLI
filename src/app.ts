@@ -1,3 +1,3 @@
-import log from './base/log.js';
+import log from '@/base/log';
 
 log.info('Node Project');

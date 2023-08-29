@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-import '../app.js';
+import '../moduleAlias';
+import '@/app';

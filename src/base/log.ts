@@ -66,17 +66,38 @@ function formatLogArguments(...args): any {
     return newArgs;
 }
 
-const logger = winston.createLogger({
-    level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
-    format: winston.format.combine(
+function createLogger() {
+    const loggerFormat = winston.format.combine(
         winston.format.timestamp({
             format: 'YYYY-MM-DD HH:mm:ss.SSS',
         }),
-        winston.format.colorize(),
         winston.format.printf((info) => `${info.level} ${info.timestamp} ${info.message}`),
-    ),
-    transports: [new winston.transports.Console()],
-});
+    );
+    const transports: any[] = [
+        new winston.transports.Console({
+            format: winston.format.combine(
+                winston.format.colorize(),
+                loggerFormat,
+            ),
+        }),
+    ];
+    if (process.env.NODE_ENV !== 'development') {
+        let filename = path.join(__dirname, 'logs/app.log');
+        if (__dirname.endsWith('base')) {
+            filename = path.join(__dirname, '../../logs/app.log');
+        }
+        transports.push(new winston.transports.File({
+            filename,
+            format: loggerFormat,
+        }));
+    }
+    return winston.createLogger({
+        level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
+        transports,
+    });
+}
+
+const logger = createLogger();
 
 const log = {
     error(...args) {

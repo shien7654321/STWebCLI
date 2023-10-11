@@ -82,13 +82,16 @@ function createLogger() {
         }),
     ];
     if (process.env.NODE_ENV !== 'development') {
-        let filename = path.join(__dirname, 'logs/app.log');
+        let dirname = path.join(__dirname, 'logs');
         if (__dirname.endsWith('base')) {
-            filename = path.join(__dirname, '../../logs/app.log');
+            dirname = path.join(__dirname, '../../logs');
         }
         transports.push(new winston.transports.File({
-            filename,
+            filename: 'app.log',
+            dirname,
             format: loggerFormat,
+            maxsize: 10 * 1024 * 1024,
+            maxFiles: 1,
         }));
     }
     return winston.createLogger({

@@ -26,6 +26,6 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': 'warn',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
     },
 };

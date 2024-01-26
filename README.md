@@ -29,6 +29,8 @@ STWebCLI is a web project CLI. You can use it to create many types of web projec
 npm install -g st-web-cli
 # OR
 yarn global add st-web-cli
+# OR
+pnpm add -g st-web-cli
 ```
 
 ## Usage

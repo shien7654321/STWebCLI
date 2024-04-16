@@ -15,7 +15,7 @@
         "prettier": "prettier --write \"src\""
     },
     "engines": {
-        "node": ">= 14.0.0",
+        "node": ">= 16.0.0",
         "npm": ">= 6.0.0"
     },
     "dependencies": {
@@ -24,12 +24,12 @@
     },
     "devDependencies": {
         "@types/module-alias": "^2.0.4",
-        "@types/node": "^20.12.2",
-        "@typescript-eslint/eslint-plugin": "5.62.0",
-        "@typescript-eslint/parser": "5.62.0",
+        "@types/node": "^20.12.7",
+        "@typescript-eslint/eslint-plugin": "^7.7.0",
+        "@typescript-eslint/parser": "^7.7.0",
         "@vercel/ncc": "^0.38.1",
         "cross-env": "^7.0.3",
-        "eslint": "^8.57.0",
+        "eslint": "8.57.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.29.1",
         "nodemon": "^3.1.0",
@@ -37,6 +37,6 @@
         "rimraf": "^5.0.5",
         "ts-node": "^10.9.2",
         "tslib": "^2.6.2",
-        "typescript": "^5.4.3"
+        "typescript": "^5.4.5"
     }
 }

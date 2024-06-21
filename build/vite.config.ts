@@ -35,6 +35,7 @@ export default defineConfig(({ command, mode }) => {
         server: {
             cors: true,
             open: true,
+            host: '0.0.0.0',
         },
         preview: {
             cors: true,

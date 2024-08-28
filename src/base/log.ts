@@ -47,7 +47,7 @@ function formatLogArguments(...args): any {
             if (newArg instanceof Object) {
                 try {
                     msg += ` ${JSON.stringify(newArg)}`;
-                } catch (err) {
+                } catch {
                     msg += ` ${newArg}`;
                 }
             } else {

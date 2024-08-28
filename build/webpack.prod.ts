@@ -14,19 +14,58 @@ export default merge(baseConfig, {
         rules: [
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    'postcss-loader',
+                ],
             },
             {
                 test: /\.less$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    'postcss-loader',
+                    'less-loader',
+                ],
             },
             {
                 test: /\.s[ac]ss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    'postcss-loader',
+                    'sass-loader',
+                ],
             },
             {
                 test: /\.styl(us)?$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'stylus-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    'postcss-loader',
+                    'stylus-loader',
+                ],
             },
         ],
     },

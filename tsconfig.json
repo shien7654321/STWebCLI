@@ -22,7 +22,6 @@
         "esModuleInterop": true,
         "noImplicitAny": false,
         "allowSyntheticDefaultImports": true,
-        "suppressImplicitAnyIndexErrors": true,
         "sourceMap": true,
         "baseUrl": ".",
         "outDir": "./dist",

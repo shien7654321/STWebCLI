@@ -1,28 +1,28 @@
 {
-    "compilerOptions": {
-        "target": "ES2015",
-        "module": "CommonJS",
-        "strict": true,
-        "downlevelIteration": true,
-        "jsx": "preserve",
-        "importHelpers": true,
-        "allowJs": true,
-        "moduleResolution": "node",
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "noImplicitAny": false,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "baseUrl": ".",
-        "rootDir": ".",
-        "outDir": "dist",
-        "types": ["node"],
-        "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-        "resolveJsonModule": true,
-        "paths": {
-            "@/*": ["src/*"]
-        }
-    },
-    "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    "strict": true,
+    "downlevelIteration": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "types": ["node"],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }

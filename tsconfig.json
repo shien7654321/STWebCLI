@@ -1,27 +1,27 @@
 {
-    "compilerOptions": {
-        "target": "ES2015",
-        "module": "esnext",
-        "strict": true,
-        "downlevelIteration": true,
-        "jsx": "preserve",
-        "importHelpers": true,
-        "allowJs": true,
-        "moduleResolution": "node",
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "noImplicitAny": false,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "baseUrl": ".",
-        "outDir": "./dist",
-        "types": ["node", "vite/client"],
-        "paths": {
-            "@/*": ["src/*"]
-        },
-        "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-        "resolveJsonModule": true
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "esnext",
+    "strict": true,
+    "downlevelIteration": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["src/*"]
     },
-    "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules", "dist"]
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }

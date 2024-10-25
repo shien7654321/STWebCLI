@@ -75,10 +75,7 @@ function createLogger() {
     );
     const transports: any[] = [
         new winston.transports.Console({
-            format: winston.format.combine(
-                winston.format.colorize(),
-                loggerFormat,
-            ),
+            format: winston.format.combine(winston.format.colorize(), loggerFormat),
         }),
     ];
     if (process.env.NODE_ENV !== 'development') {
@@ -86,13 +83,15 @@ function createLogger() {
         if (__dirname.endsWith('base')) {
             dirname = path.join(__dirname, '../../logs');
         }
-        transports.push(new winston.transports.File({
-            filename: 'app.log',
-            dirname,
-            format: loggerFormat,
-            maxsize: 10 * 1024 * 1024,
-            maxFiles: 1,
-        }));
+        transports.push(
+            new winston.transports.File({
+                filename: 'app.log',
+                dirname,
+                format: loggerFormat,
+                maxsize: 10 * 1024 * 1024,
+                maxFiles: 1,
+            }),
+        );
     }
     return winston.createLogger({
         level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',

@@ -27,11 +27,11 @@
     "vue": "2.7.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
-    "@babel/eslint-parser": "^7.26.8",
+    "@babel/core": "^7.26.10",
+    "@babel/eslint-parser": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@vue/compiler-sfc": "^3.5.13",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "babel-loader": "8.2.5",
     "compression-webpack-plugin": "9.2.0",
     "cross-env": "^7.0.3",
@@ -59,7 +59,7 @@
     "stylelint-config-standard": "25.0.0",
     "stylus": "0.63.0",
     "stylus-loader": "6.2.0",
-    "terser-webpack-plugin": "^5.3.11",
+    "terser-webpack-plugin": "^5.3.14",
     "uglify-js": "^3.19.3",
     "vue-loader": "15.9.8",
     "vue-style-loader": "^4.1.3",

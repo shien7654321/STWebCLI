@@ -25,7 +25,7 @@
     "inquirer": "8.2.5",
     "ora": "5.4.1",
     "rimraf": "3.0.2",
-    "shelljs": "^0.8.5",
+    "shelljs": "^0.9.1",
     "update-notifier": "5.1.0"
   },
   "bin": {

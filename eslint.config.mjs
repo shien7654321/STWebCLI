@@ -32,7 +32,6 @@ export default defineConfig([
                 ...globals.node,
             },
             parser: tsParser,
-            sourceType: 'module',
         },
         rules: {
             ...tsPlugin.configs.recommended.rules,

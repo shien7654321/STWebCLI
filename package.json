@@ -11,7 +11,7 @@
     "build": "vite build --config build/vite.config.ts",
     "preview": "vite preview --config build/vite.config.ts",
     "dev": "vite --config build/vite.config.ts",
-    "lint": "eslint --fix \"src/**/*.{vue,js,ts,jsx,tsx}\"",
+    "lint": "eslint --fix",
     "lint-style": "stylelint --fix \"src/**/*.{html,vue,css,less,sass,scss,styl,stylus,jsx,tsx}\"",
     "prettier": "prettier --write \"src\""
   },
@@ -21,23 +21,26 @@
     "not ie <= 8"
   ],
   "engines": {
-    "node": ">= 16.0.0",
-    "npm": ">= 6.0.0"
+    "node": ">= 18.0.0",
+    "npm": ">= 10.0.0"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.22.0",
     "@types/node": "^22.13.10",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
-    "@vitejs/plugin-legacy": "^5.4.3",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "@vitejs/plugin-legacy": "^6.0.2",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
     "autoprefixer": "^10.4.21",
-    "eslint": "8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-vue": "^10.0.0",
     "less": "^4.2.2",
     "postcss": "^8.5.3",
@@ -47,15 +50,15 @@
     "postcss-scss": "^4.0.9",
     "postcss-styl": "^0.12.3",
     "prettier": "^3.5.3",
-    "sass": "^1.85.1",
-    "stylelint": "^16.15.0",
+    "sass": "^1.86.0",
+    "stylelint": "^16.16.0",
     "stylelint-config-recess-order": "^6.0.0",
     "stylelint-config-recommended-vue": "^1.6.0",
     "stylelint-config-standard": "^37.0.0",
     "stylus": "^0.64.0",
     "terser": "^5.39.0",
     "typescript": "^5.8.2",
-    "vite": "4.5.9",
+    "vite": "^6.2.2",
     "vite-plugin-compression": "^0.5.1"
   }
 }

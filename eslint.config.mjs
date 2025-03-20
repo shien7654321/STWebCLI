@@ -1,11 +1,11 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
+import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import globals from 'globals';
+import { FlatCompat } from '@eslint/eslintrc';
+import jsPlugin from '@eslint/js';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import jsPlugin from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
 import prettierPluginRecommend from 'eslint-plugin-prettier/recommended';
 
 const __filename = fileURLToPath(import.meta.url);

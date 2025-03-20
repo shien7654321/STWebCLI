@@ -19,7 +19,7 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-    globalIgnores(['node_modules/*', 'dist/*', 'dll/*', 'build/*', 'src/types/*']),
+    globalIgnores(['node_modules/*', 'dist/*', 'dll/*', 'build/*']),
     {
         files: ['src/**/*.{vue,js,ts,jsx,tsx}'],
         extends: [...compat.extends('eslint:recommended', 'plugin:vue/essential'), prettierPluginRecommend],

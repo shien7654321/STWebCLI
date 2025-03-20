@@ -25,8 +25,8 @@
     "not ie <= 8"
   ],
   "engines": {
-    "node": ">= 16.0.0",
-    "npm": ">= 6.0.0"
+    "node": ">= 18.0.0",
+    "npm": ">= 10.0.0"
   },
   "dependencies": {
     "@vue/server-renderer": "^3.5.13",

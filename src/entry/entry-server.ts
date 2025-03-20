@@ -30,7 +30,6 @@ function renderPreloadLinks(manifest: IManifest): string {
     return links;
 }
 
-// eslint-disable-next-line func-names
 export default async function (ctx, clientManifest: IManifest) {
     try {
         const { app, router } = main();
@@ -42,7 +41,7 @@ export default async function (ctx, clientManifest: IManifest) {
             appContent,
             preloadLinks,
         };
-    } catch (err) {
+    } catch {
         throw new Error('Create app fail');
     }
 }

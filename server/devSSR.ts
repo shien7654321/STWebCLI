@@ -75,7 +75,7 @@ function devMiddleware(server: Express) {
     server.use(clientMiddleware);
     server.use(serverMiddleware);
     server.use(webpackHotMiddleware(clientCompiler));
-    server.get('*', async (req, res, next) => {
+    server.get(/(.*)/, async (req, res, next) => {
         if (!req.url || RENDER_EXCLUDE_REG.test(req.url)) {
             return next();
         }

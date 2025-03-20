@@ -20,10 +20,7 @@ export default defineConfig([
     globalIgnores(['node_modules/*', 'dist/*', 'dll/*']),
     {
         files: ['src/**/*.{js,ts}'],
-        extends: [
-            ...compat.extends('eslint:recommended'),
-            prettierPluginRecommend,
-        ],
+        extends: [...compat.extends('eslint:recommended'), prettierPluginRecommend],
         plugins: {
             '@typescript-eslint': tsPlugin,
         },
@@ -66,7 +63,7 @@ export default defineConfig([
                     args: 'none',
                 },
             ],
-            '@typescript-eslint/no-explicit-any': 'off'
+            '@typescript-eslint/no-explicit-any': 'off',
         },
     },
 ]);

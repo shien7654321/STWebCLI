@@ -1,4 +1,5 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
+import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { FlatCompat } from '@eslint/eslintrc';
@@ -6,6 +7,7 @@ import jsPlugin from '@eslint/js';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import vuePlugin from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
 import prettierPluginRecommend from 'eslint-plugin-prettier/recommended';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,9 +28,16 @@ export default defineConfig([
             '@typescript-eslint': tsPlugin,
         },
         languageOptions: {
-            ecmaVersion: 2015,
+            globals: {
+                ...globals.node,
+                ...globals.browser,
+            },
+            parser: vueParser,
             parserOptions: {
                 parser: tsParser,
+                ecmaFeatures: {
+                    jsx: true,
+                },
             },
         },
         rules: {

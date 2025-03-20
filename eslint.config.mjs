@@ -7,6 +7,7 @@ import jsPlugin from '@eslint/js';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import vuePlugin from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
 import prettierPluginRecommend from 'eslint-plugin-prettier/recommended';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,47 +18,10 @@ const compat = new FlatCompat({
     allConfig: jsPlugin.configs.all,
 });
 
-const rules = {
-    indent: [
-        'error',
-        4,
-        {
-            SwitchCase: 1,
-        },
-    ],
-    'vue/multi-word-component-names': 'off',
-    'vue/no-v-model-argument': 'off',
-    'import/extensions': 'off',
-    'import/no-unresolved': 'off',
-    'vue/no-multiple-template-root': 'off',
-    'no-param-reassign': [
-        'error',
-        {
-            props: true,
-            ignorePropertyModificationsFor: ['state'],
-        },
-    ],
-    'max-len': [
-        'error',
-        {
-            code: 120,
-        },
-    ],
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'warn',
-    '@typescript-eslint/no-unused-vars': [
-        2,
-        {
-            args: 'none',
-        },
-    ],
-    '@typescript-eslint/no-explicit-any': 'off',
-};
-
 export default defineConfig([
     globalIgnores(['node_modules/*', 'dist/*', 'dll/*', 'build/*', 'src/types/*']),
     {
-        files: ['src/**/*.{vue}'],
+        files: ['src/**/*.{vue,js,ts,jsx,tsx}'],
         extends: [...compat.extends('eslint:recommended', 'plugin:vue/essential'), prettierPluginRecommend],
         plugins: {
             vue: vuePlugin,
@@ -67,33 +31,49 @@ export default defineConfig([
             globals: {
                 ...globals.browser,
             },
-            parser: tsParser,
+            parser: vueParser,
             parserOptions: {
+                parser: tsParser,
                 ecmaFeatures: {
                     jsx: true,
                 }
             }
         },
-        rules,
-    },
-    {
-        files: ['src/**/*.{js,ts,jsx,tsx}'],
-        extends: [...compat.extends('eslint:recommended'), prettierPluginRecommend],
-        plugins: {
-            vue: vuePlugin,
-            '@typescript-eslint': tsPlugin,
+        rules: {
+            indent: [
+                'error',
+                4,
+                {
+                    SwitchCase: 1,
+                },
+            ],
+            'vue/multi-word-component-names': 'off',
+            'vue/no-v-model-argument': 'off',
+            'import/extensions': 'off',
+            'import/no-unresolved': 'off',
+            'vue/no-multiple-template-root': 'off',
+            'no-param-reassign': [
+                'error',
+                {
+                    props: true,
+                    ignorePropertyModificationsFor: ['state'],
+                },
+            ],
+            'max-len': [
+                'error',
+                {
+                    code: 120,
+                },
+            ],
+            'no-shadow': 'off',
+            '@typescript-eslint/no-shadow': 'warn',
+            '@typescript-eslint/no-unused-vars': [
+                2,
+                {
+                    args: 'none',
+                },
+            ],
+            '@typescript-eslint/no-explicit-any': 'off',
         },
-        languageOptions: {
-            globals: {
-                ...globals.browser,
-            },
-            parser: tsParser,
-            parserOptions: {
-                ecmaFeatures: {
-                    jsx: true,
-                }
-            }
-        },
-        rules,
     }
 ]);

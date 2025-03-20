@@ -29,6 +29,7 @@ export default defineConfig([
         },
         languageOptions: {
             globals: {
+                ...globals.node,
                 ...globals.browser,
             },
             parser: vueParser,

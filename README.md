@@ -18,6 +18,18 @@
 
 STWebCLI is a web project CLI. You can use it to create many types of web projects.
 
+For example: 
+
+* vue3-webpack
+* vue3-webpack-ssr
+* vue3-vite
+* vue2-webpack
+* react-webpack
+* react-vite
+* san-webpack
+* node
+
+
 ## Requirements
 
 -   node 12 or later

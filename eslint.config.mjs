@@ -4,8 +4,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { FlatCompat } from '@eslint/eslintrc';
 import jsPlugin from '@eslint/js';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
 import prettierPluginRecommend from 'eslint-plugin-prettier/recommended';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -19,19 +17,14 @@ const compat = new FlatCompat({
 export default defineConfig([
     globalIgnores(['node_modules/*', 'dist/*', 'dll/*']),
     {
-        files: ['src/**/*.{js,ts}'],
+        files: ['src/**/*.js'],
         extends: [...compat.extends('eslint:recommended'), prettierPluginRecommend],
-        plugins: {
-            '@typescript-eslint': tsPlugin,
-        },
         languageOptions: {
             globals: {
                 ...globals.node,
             },
-            parser: tsParser,
         },
         rules: {
-            ...tsPlugin.configs.recommended.rules,
             indent: [
                 'error',
                 4,
@@ -54,16 +47,7 @@ export default defineConfig([
                     code: 120,
                 },
             ],
-            '@typescript-eslint/ban-ts-comment': 'off',
             'no-shadow': 'off',
-            '@typescript-eslint/no-shadow': 'warn',
-            '@typescript-eslint/no-unused-vars': [
-                2,
-                {
-                    args: 'none',
-                },
-            ],
-            '@typescript-eslint/no-explicit-any': 'off',
         },
     },
 ]);

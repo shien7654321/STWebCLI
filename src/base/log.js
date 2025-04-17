@@ -1,20 +1,16 @@
 import path from 'path';
 import winston from 'winston';
+import { fileURLToPath } from 'url';
 
-interface IStackInfo {
-    method: string;
-    path: string;
-    line: string;
-    pos: string;
-    file: string;
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-function getStackInfo(stackIndex: number): IStackInfo | undefined {
-    const stackList: string[] = new Error().stack?.split('\n').slice(3) || [];
-    const stackReg: RegExp = /at\s+(.*)\s+\((.*):(\d*):(\d*)\)/gi;
-    const stackReg2: RegExp = /at\s+(.*):(\d*):(\d*)/gi;
-    const stack: string = stackList[stackIndex] || stackList[0];
-    const stackRes: RegExpExecArray | null = stackReg.exec(stack) || stackReg2.exec(stack);
+function getStackInfo(stackIndex) {
+    const stackList = new Error().stack?.split('\n').slice(3) || [];
+    const stackReg = /at\s+(.*)\s+\((.*):(\d*):(\d*)\)/gi;
+    const stackReg2 = /at\s+(.*):(\d*):(\d*)/gi;
+    const stack = stackList[stackIndex] || stackList[0];
+    const stackRes = stackReg.exec(stack) || stackReg2.exec(stack);
     if (stackRes && (stackRes.length === 5 || stackRes.length === 4)) {
         const stackMethod = stackRes.length === 5 ? stackRes[1] : '';
         const stackPath = stackRes.length === 5 ? stackRes[2] : stackRes[1];
@@ -31,9 +27,9 @@ function getStackInfo(stackIndex: number): IStackInfo | undefined {
     return undefined;
 }
 
-function formatLogArguments(...args): any {
-    let newArgs: any[] = [...args];
-    const assembleHandler = (stackInfo?: IStackInfo) => {
+function formatLogArguments(...args) {
+    let newArgs = [...args];
+    const assembleHandler = (stackInfo) => {
         let stackPrefix = '>';
         if (stackInfo) {
             let { path: stackInfoPath } = stackInfo;
@@ -73,7 +69,7 @@ function createLogger() {
         }),
         winston.format.printf((info) => `${info.level} ${info.timestamp} ${info.message}`),
     );
-    const transports: any[] = [
+    const transports = [
         new winston.transports.Console({
             format: winston.format.combine(winston.format.colorize(), loggerFormat),
         }),

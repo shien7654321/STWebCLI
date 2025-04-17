@@ -5,6 +5,6 @@
   "watch": [
     "src"
   ],
-  "exec": "rimraf ./dist && tsc && node -r tsconfig-paths/register -r ts-node/register ./src/bin/index.ts",
+  "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/bin/index.ts",
   "ext": ".ts,.js"
 }

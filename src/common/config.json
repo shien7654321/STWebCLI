@@ -90,8 +90,25 @@
                 }
             },
             "node": {
-                "name": "node",
-                "url": "github:shien7654321/STWebCLI#tpl-node"
+                "type": "list",
+                "message": "please select your language",
+                "props": [
+                    "choices"
+                ],
+                "choices": [
+                    "typescript",
+                    "javascript"
+                ],
+                "result": {
+                    "typescript": {
+                        "name": "node-ts",
+                        "url": "github:shien7654321/STWebCLI#tpl-node-ts"
+                    },
+                    "javascript": {
+                        "name": "node-js",
+                        "url": "github:shien7654321/STWebCLI#tpl-node-js"
+                    }
+                }
             }
         }
     }

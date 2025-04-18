@@ -40,7 +40,7 @@ function formatLogArguments(...args): any {
             if (stackInfoPath.startsWith('/')) {
                 stackInfoPath = `file://${stackInfoPath}`;
             }
-            stackPrefix = `${stackInfoPath}:${stackInfo.line}:${stackInfo.pos} >`;
+            stackPrefix = `${decodeURIComponent(stackInfoPath)}:${stackInfo.line}:${stackInfo.pos} >`;
         }
         let msg = '';
         newArgs.forEach((newArg) => {

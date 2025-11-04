@@ -20,22 +20,22 @@
     "npm": ">= 10.0.0"
   },
   "dependencies": {
-    "winston": "^3.17.0"
+    "winston": "^3.18.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.34.0",
-    "@vercel/ncc": "^0.38.3",
-    "cross-env": "^10.0.0",
-    "eslint": "^9.34.0",
+    "@eslint/js": "^9.39.1",
+    "@vercel/ncc": "^0.38.4",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
-    "globals": "^16.3.0",
+    "globals": "^16.5.0",
     "javascript-obfuscator": "^4.1.1",
     "nodemon": "^3.1.10",
     "prettier": "^3.6.2",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.1.0"
   },
   "imports": {
     "#*": "./src/*"

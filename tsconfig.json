@@ -15,6 +15,7 @@
     "strict": true,
     "downlevelIteration": true,
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "importHelpers": true,
     "allowJs": true,
     "moduleResolution": "node",
